@@ -1,0 +1,141 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace MidDb26_2024CS49
+{
+    public partial class AdvisorsForm : Form
+    {
+        DBHelper db = new DBHelper();
+
+        public AdvisorsForm()
+        {
+            InitializeComponent();
+        }
+
+        void LoadDesignations()
+        {
+            string query = "SELECT Id, Value FROM lookup WHERE Category = 'DESIGNATION'";
+
+            DataTable dt = db.GetData(query);
+
+            cmbDesignation.DataSource = dt;
+            cmbDesignation.DisplayMember = "Value";
+            cmbDesignation.ValueMember = "Id";
+        }
+
+        void LoadAdvisors()
+        {
+            string query = @"SELECT a.Id, p.FirstName, p.LastName, p.Email, 
+                     l.Value AS Designation, a.Salary
+                     FROM advisor a
+                     JOIN person p ON a.Id = p.Id
+                     JOIN lookup l ON a.Designation = l.Id";
+
+            displayAdvisors.DataSource = db.GetData(query);
+        }
+
+        private void AdvisorsForm_Load(object sender, EventArgs e)
+        {
+            LoadDesignations();
+            LoadAdvisors();
+        }
+
+        private void addAdvisorBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query1 = $"INSERT INTO person (FirstName, LastName, Email) VALUES ('{txtFirstName.Text}', '{txtLastName.Text}', '{txtEmail.Text}')";
+                db.ExecuteQuery(query1);
+
+                int personId = Convert.ToInt32(db.GetData("SELECT LAST_INSERT_ID()").Rows[0][0]);
+
+                int designationId = Convert.ToInt32(cmbDesignation.SelectedValue);
+
+                string query2 = $"INSERT INTO advisor (Id, Designation, Salary) VALUES ({personId}, {designationId}, {txtSalary.Text})";
+                db.ExecuteQuery(query2);
+
+                MessageBox.Show("Advisor Added!");
+
+                LoadAdvisors();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void updateAdvisorBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = Convert.ToInt32(displayAdvisors.CurrentRow.Cells["Id"].Value);
+                int designationId = Convert.ToInt32(cmbDesignation.SelectedValue);
+
+                string q1 = $"UPDATE person SET FirstName='{txtFirstName.Text}', LastName='{txtLastName.Text}', Email='{txtEmail.Text}' WHERE Id={id}";
+                string q2 = $"UPDATE advisor SET Designation={designationId}, Salary={txtSalary.Text} WHERE Id={id}";
+
+                db.ExecuteQuery(q1);
+                db.ExecuteQuery(q2);
+
+                MessageBox.Show("Updated!");
+                LoadAdvisors();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void deleteAdvisorBtn_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Delete this advisor?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
+                return;
+
+            try
+            {
+                int id = Convert.ToInt32(displayAdvisors.CurrentRow.Cells["Id"].Value);
+
+                db.ExecuteQuery($"DELETE FROM advisor WHERE Id = {id}");
+                db.ExecuteQuery($"DELETE FROM person WHERE Id = {id}");
+
+                MessageBox.Show("Deleted!");
+                LoadAdvisors();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            LoadAdvisors();
+        }
+
+        private void displayAdvisors_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void displayAdvisors_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = displayAdvisors.Rows[e.RowIndex];
+
+                txtFirstName.Text = row.Cells["FirstName"].Value.ToString();
+                txtLastName.Text = row.Cells["LastName"].Value.ToString();
+                txtEmail.Text = row.Cells["Email"].Value.ToString();
+                txtSalary.Text = row.Cells["Salary"].Value.ToString();
+
+                cmbDesignation.Text = row.Cells["Designation"].Value.ToString();
+            }
+        }
+    }
+}
