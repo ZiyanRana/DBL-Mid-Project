@@ -120,6 +120,7 @@
             this.assignAdvisorsBtn.TabIndex = 7;
             this.assignAdvisorsBtn.Text = "Assign Advisors";
             this.assignAdvisorsBtn.UseVisualStyleBackColor = true;
+            this.assignAdvisorsBtn.Click += new System.EventHandler(this.assignAdvisorsBtn_Click);
             // 
             // Dashboard
             // 

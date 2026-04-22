@@ -46,5 +46,11 @@ namespace MidDb26_2024CS49
             GroupProjectsForm form = new GroupProjectsForm();
             form.Show();
         }
+
+        private void assignAdvisorsBtn_Click(object sender, EventArgs e)
+        {
+            ProjectAdvisorsForm form = new ProjectAdvisorsForm();
+            form.Show();
+        }
     }
 }
