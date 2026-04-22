@@ -167,5 +167,10 @@ namespace MidDb26_2024CS49
                 txtRegno.Text = row.Cells["RegistrationNo"].Value.ToString();
             }
         }
+
+        private void displayStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

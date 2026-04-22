@@ -141,15 +141,16 @@
             // displayStudents
             // 
             this.displayStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayStudents.Location = new System.Drawing.Point(193, 354);
+            this.displayStudents.Location = new System.Drawing.Point(38, 354);
             this.displayStudents.Name = "displayStudents";
             this.displayStudents.ReadOnly = true;
             this.displayStudents.RowHeadersWidth = 62;
             this.displayStudents.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.displayStudents.RowTemplate.Height = 28;
             this.displayStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.displayStudents.Size = new System.Drawing.Size(386, 150);
+            this.displayStudents.Size = new System.Drawing.Size(722, 150);
             this.displayStudents.TabIndex = 12;
+            this.displayStudents.UseWaitCursor = true;
             this.displayStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayStudents_CellClick);
             this.displayStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayStudents_CellContentClick);
             // 
@@ -182,7 +183,7 @@
             this.Controls.Add(this.txtFirstname);
             this.Controls.Add(this.label1);
             this.Name = "StudentForm";
-            this.Text = "StudentForm";
+            this.Text = "Manage Students";
             this.Load += new System.EventHandler(this.StudentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.displayStudents)).EndInit();
             this.ResumeLayout(false);
