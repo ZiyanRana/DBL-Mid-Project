@@ -108,6 +108,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="GroupProjectsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupProjectsForm.Designer.cs">
+      <DependentUpon>GroupProjectsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GroupsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +121,12 @@
       <DependentUpon>GroupsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectAdvisorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectAdvisorsForm.Designer.cs">
+      <DependentUpon>ProjectAdvisorsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProjectsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,8 +146,14 @@
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GroupProjectsForm.resx">
+      <DependentUpon>GroupProjectsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupsForm.resx">
       <DependentUpon>GroupsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectAdvisorsForm.resx">
+      <DependentUpon>ProjectAdvisorsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProjectsForm.resx">
       <DependentUpon>ProjectsForm.cs</DependentUpon>
