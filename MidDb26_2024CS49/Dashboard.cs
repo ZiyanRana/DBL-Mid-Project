@@ -22,5 +22,29 @@ namespace MidDb26_2024CS49
             StudentForm form = new StudentForm();
             form.Show();
         }
+
+        private void advisorsBtn_Click(object sender, EventArgs e)
+        {
+            AdvisorsForm form = new AdvisorsForm();
+            form.Show();
+        }
+
+        private void projectsBtn_Click(object sender, EventArgs e)
+        {
+            ProjectsForm form = new ProjectsForm();
+            form.Show();
+        }
+
+        private void groupsBtn_Click(object sender, EventArgs e)
+        {
+            GroupsForm form = new GroupsForm();
+            form.Show();
+        }
+
+        private void assignProjectsBtn_Click(object sender, EventArgs e)
+        {
+            GroupProjectsForm form = new GroupProjectsForm();
+            form.Show();
+        }
     }
 }
