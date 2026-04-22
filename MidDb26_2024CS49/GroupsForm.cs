@@ -108,7 +108,6 @@ namespace MidDb26_2024CS49
 
         private void displayGroups_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
         }
 
         private void displayGroups_CellClick(object sender, DataGridViewCellEventArgs e)
