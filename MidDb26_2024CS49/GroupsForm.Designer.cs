@@ -60,6 +60,8 @@
             this.displayGroups.Size = new System.Drawing.Size(564, 150);
             this.displayGroups.TabIndex = 1;
             this.displayGroups.UseWaitCursor = true;
+            this.displayGroups.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayGroups_CellClick);
+            this.displayGroups.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayGroups_CellContentClick);
             // 
             // displayGroupMembers
             // 
