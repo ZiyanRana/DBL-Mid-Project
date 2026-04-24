@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace MidDb26_2024CS49
 {
@@ -60,6 +63,73 @@ namespace MidDb26_2024CS49
                                     JOIN evaluation e ON ge.EvaluationId = e.Id;";
 
                 displayReports.DataSource = db.GetData(query);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private void displayReports_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void ReportsForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void exportPdfBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (displayReports.Rows.Count == 0)
+                {
+                    MessageBox.Show("No data to export!");
+                    return;
+                }
+
+                SaveFileDialog save = new SaveFileDialog();
+                save.Filter = "PDF File|*.pdf";
+                save.Title = "Save Report";
+                save.FileName = "Report.pdf";
+
+                if (save.ShowDialog() == DialogResult.OK)
+                {
+                    Document doc = new Document();
+                    PdfWriter.GetInstance(
+                        doc,
+                        new FileStream(save.FileName, FileMode.Create)
+                    );
+
+                    doc.Open();
+                    Paragraph title = new Paragraph("FYP Management System Report");
+                    title.SpacingAfter = 20f;
+                    doc.Add(title);
+
+                    PdfPTable table = new PdfPTable(displayReports.Columns.Count);
+
+                    foreach (DataGridViewColumn column in displayReports.Columns)
+                    {
+                        table.AddCell(column.HeaderText);
+                    }
+
+                    foreach (DataGridViewRow row in displayReports.Rows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            foreach (DataGridViewCell cell in row.Cells)
+                            {
+                                table.AddCell(
+                                    cell.Value?.ToString() ?? ""
+                                );
+                            }
+                        }
+                    }
+
+                    doc.Add(table);
+                    doc.Close();
+                    MessageBox.Show("PDF Exported Successfully!");
+                }
             }
             catch (Exception ex)
             {

@@ -31,12 +31,13 @@
             this.projectReportBtn = new System.Windows.Forms.Button();
             this.marksheetReportBtn = new System.Windows.Forms.Button();
             this.displayReports = new System.Windows.Forms.DataGridView();
+            this.exportPdfBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.displayReports)).BeginInit();
             this.SuspendLayout();
             // 
             // projectReportBtn
             // 
-            this.projectReportBtn.Location = new System.Drawing.Point(163, 107);
+            this.projectReportBtn.Location = new System.Drawing.Point(163, 86);
             this.projectReportBtn.Name = "projectReportBtn";
             this.projectReportBtn.Size = new System.Drawing.Size(193, 47);
             this.projectReportBtn.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // marksheetReportBtn
             // 
-            this.marksheetReportBtn.Location = new System.Drawing.Point(443, 107);
+            this.marksheetReportBtn.Location = new System.Drawing.Point(443, 86);
             this.marksheetReportBtn.Name = "marksheetReportBtn";
             this.marksheetReportBtn.Size = new System.Drawing.Size(193, 47);
             this.marksheetReportBtn.TabIndex = 1;
@@ -57,23 +58,36 @@
             // displayReports
             // 
             this.displayReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayReports.Location = new System.Drawing.Point(163, 225);
+            this.displayReports.Location = new System.Drawing.Point(163, 183);
             this.displayReports.Name = "displayReports";
             this.displayReports.RowHeadersWidth = 62;
             this.displayReports.RowTemplate.Height = 28;
             this.displayReports.Size = new System.Drawing.Size(473, 150);
             this.displayReports.TabIndex = 2;
+            this.displayReports.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayReports_CellContentClick);
+            // 
+            // exportPdfBtn
+            // 
+            this.exportPdfBtn.Location = new System.Drawing.Point(306, 374);
+            this.exportPdfBtn.Name = "exportPdfBtn";
+            this.exportPdfBtn.Size = new System.Drawing.Size(177, 43);
+            this.exportPdfBtn.TabIndex = 3;
+            this.exportPdfBtn.Text = "Export to PDF";
+            this.exportPdfBtn.UseVisualStyleBackColor = true;
+            this.exportPdfBtn.Click += new System.EventHandler(this.exportPdfBtn_Click);
             // 
             // ReportsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.exportPdfBtn);
             this.Controls.Add(this.displayReports);
             this.Controls.Add(this.marksheetReportBtn);
             this.Controls.Add(this.projectReportBtn);
             this.Name = "ReportsForm";
             this.Text = "View Reports";
+            this.Load += new System.EventHandler(this.ReportsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.displayReports)).EndInit();
             this.ResumeLayout(false);
 
@@ -84,5 +98,6 @@
         private System.Windows.Forms.Button projectReportBtn;
         private System.Windows.Forms.Button marksheetReportBtn;
         private System.Windows.Forms.DataGridView displayReports;
+        private System.Windows.Forms.Button exportPdfBtn;
     }
 }
