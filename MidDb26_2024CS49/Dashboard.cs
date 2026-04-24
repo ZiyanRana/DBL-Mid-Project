@@ -52,5 +52,11 @@ namespace MidDb26_2024CS49
             ProjectAdvisorsForm form = new ProjectAdvisorsForm();
             form.Show();
         }
+
+        private void evaluationsBtn_Click(object sender, EventArgs e)
+        {
+            EvaluationsForm form = new EvaluationsForm();
+            form.Show();
+        }
     }
 }

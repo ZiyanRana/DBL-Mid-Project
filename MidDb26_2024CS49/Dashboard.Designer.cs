@@ -91,6 +91,7 @@
             this.evaluationsBtn.TabIndex = 4;
             this.evaluationsBtn.Text = "Evaluations";
             this.evaluationsBtn.UseVisualStyleBackColor = true;
+            this.evaluationsBtn.Click += new System.EventHandler(this.evaluationsBtn_Click);
             // 
             // reportsBtn
             // 
