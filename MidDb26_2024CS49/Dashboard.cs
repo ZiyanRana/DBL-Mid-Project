@@ -58,5 +58,11 @@ namespace MidDb26_2024CS49
             EvaluationsForm form = new EvaluationsForm();
             form.Show();
         }
+
+        private void assignMarksBtn_Click(object sender, EventArgs e)
+        {
+            GroupMarkingForm form = new GroupMarkingForm();
+            form.Show();
+        }
     }
 }

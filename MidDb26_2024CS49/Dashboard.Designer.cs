@@ -36,6 +36,7 @@
             this.reportsBtn = new System.Windows.Forms.Button();
             this.assignProjectsBtn = new System.Windows.Forms.Button();
             this.assignAdvisorsBtn = new System.Windows.Forms.Button();
+            this.assignMarksBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // studentsBtn
@@ -95,7 +96,7 @@
             // 
             // reportsBtn
             // 
-            this.reportsBtn.Location = new System.Drawing.Point(496, 418);
+            this.reportsBtn.Location = new System.Drawing.Point(344, 540);
             this.reportsBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.reportsBtn.Name = "reportsBtn";
             this.reportsBtn.Size = new System.Drawing.Size(253, 91);
@@ -123,12 +124,23 @@
             this.assignAdvisorsBtn.UseVisualStyleBackColor = true;
             this.assignAdvisorsBtn.Click += new System.EventHandler(this.assignAdvisorsBtn_Click);
             // 
+            // assignMarksBtn
+            // 
+            this.assignMarksBtn.Location = new System.Drawing.Point(496, 418);
+            this.assignMarksBtn.Name = "assignMarksBtn";
+            this.assignMarksBtn.Size = new System.Drawing.Size(253, 91);
+            this.assignMarksBtn.TabIndex = 8;
+            this.assignMarksBtn.Text = "Assign Marks";
+            this.assignMarksBtn.UseVisualStyleBackColor = true;
+            this.assignMarksBtn.Click += new System.EventHandler(this.assignMarksBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(957, 574);
+            this.ClientSize = new System.Drawing.Size(957, 655);
+            this.Controls.Add(this.assignMarksBtn);
             this.Controls.Add(this.assignAdvisorsBtn);
             this.Controls.Add(this.assignProjectsBtn);
             this.Controls.Add(this.reportsBtn);
@@ -155,5 +167,6 @@
         private System.Windows.Forms.Button reportsBtn;
         private System.Windows.Forms.Button assignProjectsBtn;
         private System.Windows.Forms.Button assignAdvisorsBtn;
+        private System.Windows.Forms.Button assignMarksBtn;
     }
 }
