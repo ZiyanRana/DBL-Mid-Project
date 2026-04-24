@@ -74,6 +74,18 @@ namespace MidDb26_2024CS49
                     return;
                 }
 
+                if (!int.TryParse(txtMarks.Text, out _))
+                {
+                    MessageBox.Show("Enter valid total marks");
+                    return;
+                }
+
+                if (!int.TryParse(txtWeightage.Text, out _))
+                {
+                    MessageBox.Show("Enter valid weightage");
+                    return;
+                }
+
                 string query = $@"
                                 INSERT INTO evaluation (Name, TotalMarks, TotalWeightage)
                                 VALUES
