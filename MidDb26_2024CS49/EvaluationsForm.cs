@@ -37,7 +37,24 @@ namespace MidDb26_2024CS49
             LoadEvaluations();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void displayEvaluations_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var row = displayEvaluations.Rows[e.RowIndex];
+
+                txtName.Text =
+                    row.Cells["Name"].Value.ToString();
+
+                txtMarks.Text =
+                    row.Cells["TotalMarks"].Value.ToString();
+
+                txtWeightage.Text =
+                    row.Cells["TotalWeightage"].Value.ToString();
+            }
+        }
+
+        private void addEvalBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -76,7 +93,7 @@ namespace MidDb26_2024CS49
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void updateEvalBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -115,7 +132,7 @@ namespace MidDb26_2024CS49
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void delEvalBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -123,8 +140,8 @@ namespace MidDb26_2024CS49
                 string query = $@"
                                 DELETE FROM evaluation
                                 WHERE Id = {id};";
-                MessageBox.Show("Deleted!");
 
+                MessageBox.Show("Deleted!");
                 LoadEvaluations();
             }
             catch (Exception ex)
@@ -133,27 +150,9 @@ namespace MidDb26_2024CS49
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void refreshBtn_Click(object sender, EventArgs e)
         {
             LoadEvaluations();
         }
-
-        private void displayEvaluations_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                var row = displayEvaluations.Rows[e.RowIndex];
-
-                txtName.Text =
-                    row.Cells["Name"].Value.ToString();
-
-                txtMarks.Text =
-                    row.Cells["TotalMarks"].Value.ToString();
-
-                txtWeightage.Text =
-                    row.Cells["TotalWeightage"].Value.ToString();
-            }
-        }
     }
 }
-

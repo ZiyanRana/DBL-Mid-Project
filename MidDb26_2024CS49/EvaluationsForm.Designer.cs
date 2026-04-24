@@ -98,7 +98,7 @@
             this.addEvalBtn.TabIndex = 6;
             this.addEvalBtn.Text = "Add Evaluation";
             this.addEvalBtn.UseVisualStyleBackColor = true;
-            this.addEvalBtn.Click += new System.EventHandler(this.button1_Click);
+            this.addEvalBtn.Click += new System.EventHandler(this.addEvalBtn_Click);
             // 
             // updateEvalBtn
             // 
@@ -108,7 +108,7 @@
             this.updateEvalBtn.TabIndex = 7;
             this.updateEvalBtn.Text = "Update Evaluation";
             this.updateEvalBtn.UseVisualStyleBackColor = true;
-            this.updateEvalBtn.Click += new System.EventHandler(this.button2_Click);
+            this.updateEvalBtn.Click += new System.EventHandler(this.updateEvalBtn_Click);
             // 
             // delEvalBtn
             // 
@@ -118,7 +118,7 @@
             this.delEvalBtn.TabIndex = 8;
             this.delEvalBtn.Text = "Delete Evaluation";
             this.delEvalBtn.UseVisualStyleBackColor = true;
-            this.delEvalBtn.Click += new System.EventHandler(this.button3_Click);
+            this.delEvalBtn.Click += new System.EventHandler(this.delEvalBtn_Click);
             // 
             // refreshBtn
             // 
@@ -128,7 +128,7 @@
             this.refreshBtn.TabIndex = 9;
             this.refreshBtn.Text = "Refresh";
             this.refreshBtn.UseVisualStyleBackColor = true;
-            this.refreshBtn.Click += new System.EventHandler(this.button4_Click);
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
             // 
             // displayEvaluations
             // 
