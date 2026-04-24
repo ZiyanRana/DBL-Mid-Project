@@ -64,5 +64,11 @@ namespace MidDb26_2024CS49
             GroupMarkingForm form = new GroupMarkingForm();
             form.Show();
         }
+
+        private void reportsBtn_Click(object sender, EventArgs e)
+        {
+            ReportsForm form = new ReportsForm();
+            form.Show();
+        }
     }
 }
