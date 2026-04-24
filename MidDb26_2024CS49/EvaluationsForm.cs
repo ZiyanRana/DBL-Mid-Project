@@ -74,11 +74,11 @@ namespace MidDb26_2024CS49
                     return;
                 }
 
-                string query = @"
+                string query = $@"
                                 INSERT INTO evaluation (Name, TotalMarks, TotalWeightage)
                                 VALUES
                                 (
-                                    {txtName.Text}, {txtMarks.Text}, {txtWeightage.Text}
+                                    '{txtName.Text}', {txtMarks.Text}, {txtWeightage.Text}
                                 )";
                 db.ExecuteQuery(query);
                 MessageBox.Show("Evaluation Added");
@@ -116,7 +116,7 @@ namespace MidDb26_2024CS49
                 int id = Convert.ToInt32(displayEvaluations.CurrentRow.Cells["Id"].Value);
                 string query = $@"
                                 UPDATE evaluation
-                                SET Name = {txtName.Text},
+                                SET Name = '{txtName.Text}',
                                     TotalMarks = {txtMarks.Text},
                                     TotalWeightage = {txtWeightage.Text}
                                 WHERE Id = {id};";
