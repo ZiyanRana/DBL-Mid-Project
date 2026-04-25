@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(189, 24);
+            this.label1.Location = new System.Drawing.Point(189, 65);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 0;
@@ -55,15 +55,15 @@
             // 
             // txtFirstname
             // 
-            this.txtFirstname.Location = new System.Drawing.Point(193, 47);
+            this.txtFirstname.Location = new System.Drawing.Point(193, 88);
             this.txtFirstname.Name = "txtFirstname";
-            this.txtFirstname.Size = new System.Drawing.Size(100, 26);
+            this.txtFirstname.Size = new System.Drawing.Size(141, 26);
             this.txtFirstname.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(189, 95);
+            this.label2.Location = new System.Drawing.Point(458, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(189, 161);
+            this.label3.Location = new System.Drawing.Point(189, 159);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 3;
@@ -81,7 +81,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(189, 228);
+            this.label4.Location = new System.Drawing.Point(458, 159);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 20);
             this.label4.TabIndex = 4;
@@ -89,28 +89,28 @@
             // 
             // txtLastname
             // 
-            this.txtLastname.Location = new System.Drawing.Point(193, 118);
+            this.txtLastname.Location = new System.Drawing.Point(462, 88);
             this.txtLastname.Name = "txtLastname";
-            this.txtLastname.Size = new System.Drawing.Size(100, 26);
+            this.txtLastname.Size = new System.Drawing.Size(134, 26);
             this.txtLastname.TabIndex = 5;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(193, 184);
+            this.txtEmail.Location = new System.Drawing.Point(193, 182);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 26);
+            this.txtEmail.Size = new System.Drawing.Size(141, 26);
             this.txtEmail.TabIndex = 6;
             // 
             // txtRegno
             // 
-            this.txtRegno.Location = new System.Drawing.Point(193, 251);
+            this.txtRegno.Location = new System.Drawing.Point(462, 182);
             this.txtRegno.Name = "txtRegno";
-            this.txtRegno.Size = new System.Drawing.Size(100, 26);
+            this.txtRegno.Size = new System.Drawing.Size(134, 26);
             this.txtRegno.TabIndex = 7;
             // 
             // addStudentBtn
             // 
-            this.addStudentBtn.Location = new System.Drawing.Point(146, 300);
+            this.addStudentBtn.Location = new System.Drawing.Point(81, 277);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(147, 36);
             this.addStudentBtn.TabIndex = 9;
@@ -120,7 +120,7 @@
             // 
             // deleteStudentBtn
             // 
-            this.deleteStudentBtn.Location = new System.Drawing.Point(319, 300);
+            this.deleteStudentBtn.Location = new System.Drawing.Point(416, 277);
             this.deleteStudentBtn.Name = "deleteStudentBtn";
             this.deleteStudentBtn.Size = new System.Drawing.Size(147, 36);
             this.deleteStudentBtn.TabIndex = 10;
@@ -130,7 +130,7 @@
             // 
             // refreshBtn
             // 
-            this.refreshBtn.Location = new System.Drawing.Point(487, 300);
+            this.refreshBtn.Location = new System.Drawing.Point(583, 277);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(147, 36);
             this.refreshBtn.TabIndex = 11;
@@ -141,14 +141,14 @@
             // displayStudents
             // 
             this.displayStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayStudents.Location = new System.Drawing.Point(38, 354);
+            this.displayStudents.Location = new System.Drawing.Point(39, 340);
             this.displayStudents.Name = "displayStudents";
             this.displayStudents.ReadOnly = true;
             this.displayStudents.RowHeadersWidth = 62;
             this.displayStudents.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.displayStudents.RowTemplate.Height = 28;
             this.displayStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.displayStudents.Size = new System.Drawing.Size(722, 150);
+            this.displayStudents.Size = new System.Drawing.Size(722, 198);
             this.displayStudents.TabIndex = 12;
             this.displayStudents.UseWaitCursor = true;
             this.displayStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayStudents_CellClick);
@@ -156,9 +156,9 @@
             // 
             // updateStudentBtn
             // 
-            this.updateStudentBtn.Location = new System.Drawing.Point(652, 305);
+            this.updateStudentBtn.Location = new System.Drawing.Point(250, 277);
             this.updateStudentBtn.Name = "updateStudentBtn";
-            this.updateStudentBtn.Size = new System.Drawing.Size(108, 31);
+            this.updateStudentBtn.Size = new System.Drawing.Size(146, 36);
             this.updateStudentBtn.TabIndex = 13;
             this.updateStudentBtn.Text = "Update Student";
             this.updateStudentBtn.UseVisualStyleBackColor = true;
@@ -168,7 +168,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 526);
+            this.ClientSize = new System.Drawing.Size(809, 569);
             this.Controls.Add(this.updateStudentBtn);
             this.Controls.Add(this.displayStudents);
             this.Controls.Add(this.refreshBtn);

@@ -38,48 +38,58 @@
             this.deleteAdvisorBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.displayAdvisors = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.displayAdvisors)).BeginInit();
             this.SuspendLayout();
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(85, 32);
+            this.txtFirstName.Location = new System.Drawing.Point(39, 93);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(100, 26);
+            this.txtFirstName.Size = new System.Drawing.Size(127, 26);
             this.txtFirstName.TabIndex = 0;
+            this.txtFirstName.TextChanged += new System.EventHandler(this.txtFirstName_TextChanged);
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(204, 32);
+            this.txtLastName.Location = new System.Drawing.Point(189, 93);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(100, 26);
+            this.txtLastName.Size = new System.Drawing.Size(127, 26);
             this.txtLastName.TabIndex = 1;
+            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(327, 32);
+            this.txtEmail.Location = new System.Drawing.Point(338, 93);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 26);
+            this.txtEmail.Size = new System.Drawing.Size(127, 26);
             this.txtEmail.TabIndex = 2;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtSalary
             // 
-            this.txtSalary.Location = new System.Drawing.Point(571, 32);
+            this.txtSalary.Location = new System.Drawing.Point(655, 93);
             this.txtSalary.Name = "txtSalary";
-            this.txtSalary.Size = new System.Drawing.Size(100, 26);
+            this.txtSalary.Size = new System.Drawing.Size(127, 26);
             this.txtSalary.TabIndex = 3;
+            this.txtSalary.TextChanged += new System.EventHandler(this.txtSalary_TextChanged);
             // 
             // cmbDesignation
             // 
             this.cmbDesignation.FormattingEnabled = true;
-            this.cmbDesignation.Location = new System.Drawing.Point(433, 30);
+            this.cmbDesignation.Location = new System.Drawing.Point(493, 93);
             this.cmbDesignation.Name = "cmbDesignation";
-            this.cmbDesignation.Size = new System.Drawing.Size(121, 28);
+            this.cmbDesignation.Size = new System.Drawing.Size(138, 28);
             this.cmbDesignation.TabIndex = 4;
+            this.cmbDesignation.SelectedIndexChanged += new System.EventHandler(this.cmbDesignation_SelectedIndexChanged);
             // 
             // addAdvisorBtn
             // 
-            this.addAdvisorBtn.Location = new System.Drawing.Point(166, 95);
+            this.addAdvisorBtn.Location = new System.Drawing.Point(204, 173);
             this.addAdvisorBtn.Name = "addAdvisorBtn";
             this.addAdvisorBtn.Size = new System.Drawing.Size(156, 34);
             this.addAdvisorBtn.TabIndex = 5;
@@ -89,7 +99,7 @@
             // 
             // updateAdvisorBtn
             // 
-            this.updateAdvisorBtn.Location = new System.Drawing.Point(398, 95);
+            this.updateAdvisorBtn.Location = new System.Drawing.Point(436, 173);
             this.updateAdvisorBtn.Name = "updateAdvisorBtn";
             this.updateAdvisorBtn.Size = new System.Drawing.Size(156, 34);
             this.updateAdvisorBtn.TabIndex = 6;
@@ -99,7 +109,7 @@
             // 
             // deleteAdvisorBtn
             // 
-            this.deleteAdvisorBtn.Location = new System.Drawing.Point(166, 151);
+            this.deleteAdvisorBtn.Location = new System.Drawing.Point(204, 229);
             this.deleteAdvisorBtn.Name = "deleteAdvisorBtn";
             this.deleteAdvisorBtn.Size = new System.Drawing.Size(156, 34);
             this.deleteAdvisorBtn.TabIndex = 7;
@@ -109,7 +119,7 @@
             // 
             // refreshBtn
             // 
-            this.refreshBtn.Location = new System.Drawing.Point(398, 151);
+            this.refreshBtn.Location = new System.Drawing.Point(436, 229);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(156, 34);
             this.refreshBtn.TabIndex = 8;
@@ -120,23 +130,73 @@
             // displayAdvisors
             // 
             this.displayAdvisors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayAdvisors.Location = new System.Drawing.Point(85, 243);
+            this.displayAdvisors.Location = new System.Drawing.Point(101, 288);
             this.displayAdvisors.Name = "displayAdvisors";
             this.displayAdvisors.ReadOnly = true;
             this.displayAdvisors.RowHeadersWidth = 62;
             this.displayAdvisors.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.displayAdvisors.RowTemplate.Height = 28;
+            this.displayAdvisors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.displayAdvisors.Size = new System.Drawing.Size(586, 150);
             this.displayAdvisors.TabIndex = 9;
-            this.displayAdvisors.UseWaitCursor = true;
             this.displayAdvisors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayAdvisors_CellClick);
             this.displayAdvisors.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayAdvisors_CellContentClick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "First Name:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(185, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Last Name:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(334, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Email:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(489, 70);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 20);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Designation:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(651, 70);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(57, 20);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Salary:";
             // 
             // AdvisorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(818, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.displayAdvisors);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.deleteAdvisorBtn);
@@ -168,5 +228,10 @@
         private System.Windows.Forms.Button deleteAdvisorBtn;
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.DataGridView displayAdvisors;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

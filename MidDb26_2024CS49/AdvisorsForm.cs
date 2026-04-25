@@ -47,10 +47,47 @@ namespace MidDb26_2024CS49
             LoadAdvisors();
         }
 
+        bool ValidateInputs()
+        {
+            if (txtFirstName.Text.Trim() == "")
+            {
+                MessageBox.Show("First Name is required");
+                return false;
+            }
+            if (txtLastName.Text.Trim() == "")
+            {
+                MessageBox.Show("Last Name is required");
+                return false;
+            }
+            if (txtEmail.Text.Trim() == "")
+            {
+                MessageBox.Show("Email is required");
+                return false;
+            }
+            if (!txtEmail.Text.Contains("@"))
+            {
+                MessageBox.Show("Invalid Email");
+                return false;
+            }
+            if (txtSalary.Text.Trim() == "")
+            {
+                MessageBox.Show("Salary is required");
+                return false;
+            }
+            if (!int.TryParse(txtSalary.Text, out _))
+            {
+                MessageBox.Show("Invalid salary amount, must be only numbers.");
+                return false;
+            }
+            return true;
+        }
+
         private void addAdvisorBtn_Click(object sender, EventArgs e)
         {
             try
             {
+                if (!ValidateInputs()) return;
+                                
                 string query1 = $"INSERT INTO person (FirstName, LastName, Email) VALUES ('{txtFirstName.Text}', '{txtLastName.Text}', '{txtEmail.Text}')";
                 db.ExecuteQuery(query1);
 
@@ -136,6 +173,31 @@ namespace MidDb26_2024CS49
 
                 cmbDesignation.Text = row.Cells["Designation"].Value.ToString();
             }
+        }
+
+        private void txtFirstName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSalary_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbDesignation_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

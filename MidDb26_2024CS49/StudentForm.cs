@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace MidDb26_2024CS49
 {
@@ -119,6 +120,11 @@ namespace MidDb26_2024CS49
             if (txtRegno.Text.Trim() == "")
             {
                 MessageBox.Show("Registration Number is required");
+                return false;
+            }
+            else if (!txtRegno.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("Invalid registration number, must include a number.");
                 return false;
             }
             return true;

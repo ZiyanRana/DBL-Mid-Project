@@ -42,22 +42,22 @@
             // cmbAdvisors
             // 
             this.cmbAdvisors.FormattingEnabled = true;
-            this.cmbAdvisors.Location = new System.Drawing.Point(300, 64);
+            this.cmbAdvisors.Location = new System.Drawing.Point(295, 73);
             this.cmbAdvisors.Name = "cmbAdvisors";
-            this.cmbAdvisors.Size = new System.Drawing.Size(121, 28);
+            this.cmbAdvisors.Size = new System.Drawing.Size(131, 28);
             this.cmbAdvisors.TabIndex = 0;
             // 
             // cmbRoles
             // 
             this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Location = new System.Drawing.Point(439, 64);
+            this.cmbRoles.Location = new System.Drawing.Point(468, 73);
             this.cmbRoles.Name = "cmbRoles";
-            this.cmbRoles.Size = new System.Drawing.Size(121, 28);
+            this.cmbRoles.Size = new System.Drawing.Size(127, 28);
             this.cmbRoles.TabIndex = 1;
             // 
             // assignAdvisorBtn
             // 
-            this.assignAdvisorBtn.Location = new System.Drawing.Point(286, 153);
+            this.assignAdvisorBtn.Location = new System.Drawing.Point(286, 170);
             this.assignAdvisorBtn.Name = "assignAdvisorBtn";
             this.assignAdvisorBtn.Size = new System.Drawing.Size(149, 39);
             this.assignAdvisorBtn.TabIndex = 2;
@@ -81,7 +81,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(296, 38);
+            this.label1.Location = new System.Drawing.Point(291, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 20);
             this.label1.TabIndex = 4;
@@ -90,7 +90,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(439, 38);
+            this.label2.Location = new System.Drawing.Point(468, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 5;
@@ -99,15 +99,15 @@
             // cmbProjects
             // 
             this.cmbProjects.FormattingEnabled = true;
-            this.cmbProjects.Location = new System.Drawing.Point(161, 64);
+            this.cmbProjects.Location = new System.Drawing.Point(126, 73);
             this.cmbProjects.Name = "cmbProjects";
-            this.cmbProjects.Size = new System.Drawing.Size(121, 28);
+            this.cmbProjects.Size = new System.Drawing.Size(129, 28);
             this.cmbProjects.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(161, 37);
+            this.label3.Location = new System.Drawing.Point(126, 46);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 7;

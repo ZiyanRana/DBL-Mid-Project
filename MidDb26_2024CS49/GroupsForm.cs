@@ -40,13 +40,14 @@ namespace MidDb26_2024CS49
         void LoadGroupMembers(int groupId)
         {
             string query = $@"
-                            SELECT p.FirstName, p.LastName, s.RegistrationNo
+                            SELECT s.Id AS StudentId, p.FirstName, p.LastName, s.RegistrationNo
                             FROM groupstudent gs
                             JOIN student s ON gs.StudentId = s.Id
                             JOIN person p ON s.Id = p.Id
                             WHERE gs.GroupId = {groupId}";
 
             displayGroupMembers.DataSource = db.GetData(query);
+            displayGroupMembers.Columns["StudentId"].Visible = false;
         }
 
         private void GroupsForm_Load(object sender, EventArgs e)
@@ -67,8 +68,17 @@ namespace MidDb26_2024CS49
                 }
 
                 int groupId = Convert.ToInt32(displayGroups.CurrentRow.Cells["Id"].Value);
-
                 int studentId = Convert.ToInt32(cmbStudents.SelectedValue);
+
+                string checkQuery = $@"
+                                     SELECT * FROM groupstudent
+                                     WHERE GroupId = {groupId} AND StudentId = {studentId};";
+                
+                if (db.GetData(checkQuery).Rows.Count > 0)
+                {
+                    MessageBox.Show("Student already exists in this group!");
+                    return;
+                }
 
                 string query = $@"
                                 INSERT INTO groupstudent
@@ -116,6 +126,61 @@ namespace MidDb26_2024CS49
             {
                 int groupId = Convert.ToInt32(displayGroups.Rows[e.RowIndex].Cells["Id"].Value);
                 LoadGroupMembers(groupId);
+            }
+        }
+
+        private void deleteGroupBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (displayGroups.CurrentRow == null)
+                {
+                    MessageBox.Show("Select a group first!");
+                    return;
+                }
+
+                int groupId = Convert.ToInt32(displayGroups.CurrentRow.Cells["Id"].Value);
+                    
+                db.ExecuteQuery($"DELETE FROM groupstudent WHERE GroupId = {groupId}");
+                db.ExecuteQuery($"DELETE FROM groupproject WHERE GroupId = {groupId}");
+                db.ExecuteQuery($"DELETE FROM groupevaluation WHERE GroupId = {groupId}");
+                db.ExecuteQuery($"DELETE FROM `group` WHERE Id = {groupId}");
+
+                MessageBox.Show("Group deleted!");
+                LoadGroups();
+
+                displayGroupMembers.DataSource = null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void removeStudentBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (displayGroups.CurrentRow == null || displayGroupMembers.CurrentRow == null)
+                {
+                    MessageBox.Show("Select group and student first!");
+                    return;
+                }
+
+                int groupId = Convert.ToInt32(displayGroups.CurrentRow.Cells["Id"].Value);
+                int studentId = Convert.ToInt32(displayGroupMembers.CurrentRow.Cells["StudentId"].Value);
+
+                string query = $@"
+                                DELETE FROM groupstudent
+                                WHERE GroupId = {groupId} AND StudentId = {studentId}";
+
+                db.ExecuteQuery(query);
+                MessageBox.Show("Student removed from group!");
+                LoadGroupMembers(groupId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }
