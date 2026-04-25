@@ -41,7 +41,7 @@
             // 
             // studentsBtn
             // 
-            this.studentsBtn.Location = new System.Drawing.Point(199, 79);
+            this.studentsBtn.Location = new System.Drawing.Point(77, 99);
             this.studentsBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.studentsBtn.Name = "studentsBtn";
             this.studentsBtn.Size = new System.Drawing.Size(253, 91);
@@ -52,7 +52,7 @@
             // 
             // advisorsBtn
             // 
-            this.advisorsBtn.Location = new System.Drawing.Point(496, 79);
+            this.advisorsBtn.Location = new System.Drawing.Point(357, 99);
             this.advisorsBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.advisorsBtn.Name = "advisorsBtn";
             this.advisorsBtn.Size = new System.Drawing.Size(253, 91);
@@ -63,29 +63,29 @@
             // 
             // projectsBtn
             // 
-            this.projectsBtn.Location = new System.Drawing.Point(199, 195);
+            this.projectsBtn.Location = new System.Drawing.Point(641, 99);
             this.projectsBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.projectsBtn.Name = "projectsBtn";
             this.projectsBtn.Size = new System.Drawing.Size(253, 91);
             this.projectsBtn.TabIndex = 2;
-            this.projectsBtn.Text = "Projects";
+            this.projectsBtn.Text = "Manage Projects";
             this.projectsBtn.UseVisualStyleBackColor = true;
             this.projectsBtn.Click += new System.EventHandler(this.projectsBtn_Click);
             // 
             // groupsBtn
             // 
-            this.groupsBtn.Location = new System.Drawing.Point(496, 195);
+            this.groupsBtn.Location = new System.Drawing.Point(77, 217);
             this.groupsBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.groupsBtn.Name = "groupsBtn";
             this.groupsBtn.Size = new System.Drawing.Size(253, 91);
             this.groupsBtn.TabIndex = 3;
-            this.groupsBtn.Text = "Groups";
+            this.groupsBtn.Text = "Manage Groups";
             this.groupsBtn.UseVisualStyleBackColor = true;
             this.groupsBtn.Click += new System.EventHandler(this.groupsBtn_Click);
             // 
             // evaluationsBtn
             // 
-            this.evaluationsBtn.Location = new System.Drawing.Point(199, 418);
+            this.evaluationsBtn.Location = new System.Drawing.Point(77, 335);
             this.evaluationsBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.evaluationsBtn.Name = "evaluationsBtn";
             this.evaluationsBtn.Size = new System.Drawing.Size(253, 91);
@@ -96,18 +96,18 @@
             // 
             // reportsBtn
             // 
-            this.reportsBtn.Location = new System.Drawing.Point(344, 540);
+            this.reportsBtn.Location = new System.Drawing.Point(641, 335);
             this.reportsBtn.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.reportsBtn.Name = "reportsBtn";
             this.reportsBtn.Size = new System.Drawing.Size(253, 91);
             this.reportsBtn.TabIndex = 5;
-            this.reportsBtn.Text = "Reports";
+            this.reportsBtn.Text = "Manage Reports";
             this.reportsBtn.UseVisualStyleBackColor = true;
             this.reportsBtn.Click += new System.EventHandler(this.reportsBtn_Click);
             // 
             // assignProjectsBtn
             // 
-            this.assignProjectsBtn.Location = new System.Drawing.Point(199, 304);
+            this.assignProjectsBtn.Location = new System.Drawing.Point(357, 217);
             this.assignProjectsBtn.Name = "assignProjectsBtn";
             this.assignProjectsBtn.Size = new System.Drawing.Size(253, 91);
             this.assignProjectsBtn.TabIndex = 6;
@@ -117,7 +117,7 @@
             // 
             // assignAdvisorsBtn
             // 
-            this.assignAdvisorsBtn.Location = new System.Drawing.Point(496, 304);
+            this.assignAdvisorsBtn.Location = new System.Drawing.Point(641, 217);
             this.assignAdvisorsBtn.Name = "assignAdvisorsBtn";
             this.assignAdvisorsBtn.Size = new System.Drawing.Size(253, 91);
             this.assignAdvisorsBtn.TabIndex = 7;
@@ -127,7 +127,7 @@
             // 
             // assignMarksBtn
             // 
-            this.assignMarksBtn.Location = new System.Drawing.Point(496, 418);
+            this.assignMarksBtn.Location = new System.Drawing.Point(357, 335);
             this.assignMarksBtn.Name = "assignMarksBtn";
             this.assignMarksBtn.Size = new System.Drawing.Size(253, 91);
             this.assignMarksBtn.TabIndex = 8;
@@ -140,7 +140,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(957, 655);
+            this.ClientSize = new System.Drawing.Size(970, 499);
             this.Controls.Add(this.assignMarksBtn);
             this.Controls.Add(this.assignAdvisorsBtn);
             this.Controls.Add(this.assignProjectsBtn);
