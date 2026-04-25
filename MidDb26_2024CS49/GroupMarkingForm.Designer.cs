@@ -38,6 +38,7 @@
             this.updateMarksBtn = new System.Windows.Forms.Button();
             this.deleteMarksBtn = new System.Windows.Forms.Button();
             this.displayMarks = new System.Windows.Forms.DataGridView();
+            this.refreshBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.displayMarks)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,7 +94,7 @@
             // 
             // assignMarksBtn
             // 
-            this.assignMarksBtn.Location = new System.Drawing.Point(121, 172);
+            this.assignMarksBtn.Location = new System.Drawing.Point(221, 162);
             this.assignMarksBtn.Name = "assignMarksBtn";
             this.assignMarksBtn.Size = new System.Drawing.Size(156, 44);
             this.assignMarksBtn.TabIndex = 6;
@@ -103,7 +104,7 @@
             // 
             // updateMarksBtn
             // 
-            this.updateMarksBtn.Location = new System.Drawing.Point(320, 172);
+            this.updateMarksBtn.Location = new System.Drawing.Point(428, 162);
             this.updateMarksBtn.Name = "updateMarksBtn";
             this.updateMarksBtn.Size = new System.Drawing.Size(156, 44);
             this.updateMarksBtn.TabIndex = 7;
@@ -113,7 +114,7 @@
             // 
             // deleteMarksBtn
             // 
-            this.deleteMarksBtn.Location = new System.Drawing.Point(520, 172);
+            this.deleteMarksBtn.Location = new System.Drawing.Point(221, 212);
             this.deleteMarksBtn.Name = "deleteMarksBtn";
             this.deleteMarksBtn.Size = new System.Drawing.Size(156, 44);
             this.deleteMarksBtn.TabIndex = 8;
@@ -131,11 +132,22 @@
             this.displayMarks.Size = new System.Drawing.Size(438, 150);
             this.displayMarks.TabIndex = 9;
             // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Location = new System.Drawing.Point(428, 212);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(156, 44);
+            this.refreshBtn.TabIndex = 10;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
             // GroupMarkingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.displayMarks);
             this.Controls.Add(this.deleteMarksBtn);
             this.Controls.Add(this.updateMarksBtn);
@@ -167,5 +179,6 @@
         private System.Windows.Forms.Button updateMarksBtn;
         private System.Windows.Forms.Button deleteMarksBtn;
         private System.Windows.Forms.DataGridView displayMarks;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }

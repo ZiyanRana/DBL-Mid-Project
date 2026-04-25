@@ -82,17 +82,35 @@ namespace MidDb26_2024CS49
             return true;
         }
 
+        void ClearFields()
+        {
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtEmail.Text = "";
+            txtSalary.Text = "";
+            cmbDesignation.SelectedIndex = -1;
+        }
+
         private void addAdvisorBtn_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!ValidateInputs()) return;
+
+                string checkQuery = $@"
+                                      SELECT * FROM person p
+                                      WHERE p.Email = '{txtEmail.Text}';";
+
+                if (db.GetData(checkQuery).Rows.Count > 0)
+                {
+                    MessageBox.Show("Advisor already exist!");
+                    return;
+                }
                                 
                 string query1 = $"INSERT INTO person (FirstName, LastName, Email) VALUES ('{txtFirstName.Text}', '{txtLastName.Text}', '{txtEmail.Text}')";
                 db.ExecuteQuery(query1);
 
                 int personId = Convert.ToInt32(db.GetData("SELECT LAST_INSERT_ID()").Rows[0][0]);
-
                 int designationId = Convert.ToInt32(cmbDesignation.SelectedValue);
 
                 string query2 = $"INSERT INTO advisor (Id, Designation, Salary) VALUES ({personId}, {designationId}, {txtSalary.Text})";
@@ -154,6 +172,7 @@ namespace MidDb26_2024CS49
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             LoadAdvisors();
+            ClearFields();
         }
 
         private void displayAdvisors_CellContentClick(object sender, DataGridViewCellEventArgs e)

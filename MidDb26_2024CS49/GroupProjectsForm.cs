@@ -43,11 +43,12 @@ namespace MidDb26_2024CS49
         void LoadAssignments()
         {
             string query = @"
-                            SELECT gp.GroupId, p.Title, gp.AssignmentDate
+                            SELECT gp.ProjectId, gp.GroupId, p.Title, gp.AssignmentDate
                             FROM groupproject gp
                             JOIN project p ON gp.ProjectId = p.Id";
 
             displayAssignments.DataSource = db.GetData(query);
+            displayAssignments.Columns["ProjectId"].Visible = false;
         }
 
         private void GroupProjectsForm_Load(object sender, EventArgs e)
@@ -82,6 +83,32 @@ namespace MidDb26_2024CS49
 
                 db.ExecuteQuery(query);
                 MessageBox.Show("Project Assigned!");
+                LoadAssignments();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void removeAssignmentBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (displayAssignments.CurrentRow == null)
+                {
+                    MessageBox.Show("Select an assignment first!");
+                    return;
+                }
+
+                int groupId = Convert.ToInt32(displayAssignments.CurrentRow.Cells["GroupId"].Value);
+                int projectId = Convert.ToInt32(displayAssignments.CurrentRow.Cells["ProjectId"].Value);
+
+                string query = $@"
+                                 DELETE FROM groupproject
+                                 WHERE GroupId = {groupId} AND ProjectId = {projectId};";
+                db.ExecuteQuery(query);
+                MessageBox.Show("Assignment removed successfully!");
                 LoadAssignments();
             }
             catch (Exception ex)

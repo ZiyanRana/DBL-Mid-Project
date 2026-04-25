@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbProjects = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.removeAdvisorBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.displayAssignments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             // 
             // assignAdvisorBtn
             // 
-            this.assignAdvisorBtn.Location = new System.Drawing.Point(286, 170);
+            this.assignAdvisorBtn.Location = new System.Drawing.Point(213, 176);
             this.assignAdvisorBtn.Name = "assignAdvisorBtn";
             this.assignAdvisorBtn.Size = new System.Drawing.Size(149, 39);
             this.assignAdvisorBtn.TabIndex = 2;
@@ -68,14 +69,14 @@
             // displayAssignments
             // 
             this.displayAssignments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayAssignments.Location = new System.Drawing.Point(161, 247);
+            this.displayAssignments.Location = new System.Drawing.Point(130, 247);
             this.displayAssignments.Name = "displayAssignments";
             this.displayAssignments.ReadOnly = true;
             this.displayAssignments.RowHeadersWidth = 62;
             this.displayAssignments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.displayAssignments.RowTemplate.Height = 28;
             this.displayAssignments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.displayAssignments.Size = new System.Drawing.Size(399, 150);
+            this.displayAssignments.Size = new System.Drawing.Size(465, 150);
             this.displayAssignments.TabIndex = 3;
             // 
             // label1
@@ -113,11 +114,22 @@
             this.label3.TabIndex = 7;
             this.label3.Text = "Select Project";
             // 
+            // removeAdvisorBtn
+            // 
+            this.removeAdvisorBtn.Location = new System.Drawing.Point(388, 176);
+            this.removeAdvisorBtn.Name = "removeAdvisorBtn";
+            this.removeAdvisorBtn.Size = new System.Drawing.Size(148, 39);
+            this.removeAdvisorBtn.TabIndex = 8;
+            this.removeAdvisorBtn.Text = "Remove Advisor";
+            this.removeAdvisorBtn.UseVisualStyleBackColor = true;
+            this.removeAdvisorBtn.Click += new System.EventHandler(this.removeAdvisorBtn_Click);
+            // 
             // ProjectAdvisorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(753, 450);
+            this.Controls.Add(this.removeAdvisorBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbProjects);
             this.Controls.Add(this.label2);
@@ -145,5 +157,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbProjects;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button removeAdvisorBtn;
     }
 }

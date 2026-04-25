@@ -60,21 +60,19 @@ namespace MidDb26_2024CS49
         void LoadAssignments()
         {
             string query = @"
-                            SELECT 
-                                p.Title AS Project, 
-                                CONCAT(pe.FirstName, ' ', pe.LastName) AS Advisor,
-                                l.Value AS Role, 
-                                pa.AssignmentDate
-
+                            SELECT pa.ProjectId, pa.AdvisorId, p.Title AS Project, CONCAT(pe.FirstName, ' ', pe.LastName) AS Advisor, l.Value AS Role, pa.AssignmentDate
                             FROM projectadvisor pa
 
                             JOIN project p ON pa.ProjectId = p.Id
                             JOIN advisor a ON pa.AdvisorId = a.Id
                             JOIN person pe ON a.Id = pe.Id
-                            JOIN lookup l ON pa.AdvisorRole = l.Id";
+                            JOIN lookup l ON pa.AdvisorRole = l.Id;";
       
             displayAssignments.DataSource = db.GetData(query);
+            displayAssignments.Columns["ProjectId"].Visible = false;
+            displayAssignments.Columns["AdvisorId"].Visible = false;
         }
+
         private void ProjectAdvisorsForm_Load(object sender, EventArgs e)
         {
             LoadProjects();
@@ -110,6 +108,33 @@ namespace MidDb26_2024CS49
 
                 db.ExecuteQuery(query);
                 MessageBox.Show("Advisor Assigned!");
+                LoadAssignments();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void removeAdvisorBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (displayAssignments.CurrentRow == null)
+                {
+                    MessageBox.Show("Select a row first");
+                    return;
+                }
+
+                int advisorId = Convert.ToInt32(displayAssignments.CurrentRow.Cells["AdvisorId"].Value);
+                int projectId = Convert.ToInt32(displayAssignments.CurrentRow.Cells["ProjectId"].Value);
+
+                string query = $@"
+                                  DELETE FROM projectadvisor
+                                  WHERE ProjectId = {projectId} AND AdvisorId = {advisorId};";
+
+                db.ExecuteQuery(query);
+                MessageBox.Show("Advisor removed successfully!");
                 LoadAssignments();
             }
             catch (Exception ex)

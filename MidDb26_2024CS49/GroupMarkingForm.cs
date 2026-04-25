@@ -20,9 +20,7 @@ namespace MidDb26_2024CS49
 
         void LoadGroups()
         {
-            string query = @"
-                            SELECT Id, CONCAT('Group ', Id) AS GroupName
-                            FROM group;";
+            string query = "SELECT Id, CONCAT('Group ', Id) AS GroupName FROM `group`;";
 
             DataTable dt = db.GetData(query);
 
@@ -33,7 +31,7 @@ namespace MidDb26_2024CS49
 
         void LoadEvaluations()
         {
-            string query = @"SELECT Id, Name FROM evaluation;";
+            string query = "SELECT Id, Name FROM evaluation;";
 
             DataTable dt = db.GetData(query);
 
@@ -54,6 +52,11 @@ namespace MidDb26_2024CS49
                             JOIN evaluation e ON ge.EvaluationId = e.Id;";
 
             displayMarks.DataSource = db.GetData(query);
+        }
+
+        void ClearFields()
+        {
+            txtMarks.Text = "";
         }
 
         private void GroupMarkingForm_Load(object sender, EventArgs e)
@@ -140,6 +143,14 @@ namespace MidDb26_2024CS49
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            LoadEvaluations();
+            LoadGroups();
+            LoadMarks();
+            ClearFields();
         }
     }
 }

@@ -46,21 +46,21 @@
             // 
             this.txtName.Location = new System.Drawing.Point(132, 57);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(100, 26);
+            this.txtName.Size = new System.Drawing.Size(139, 26);
             this.txtName.TabIndex = 0;
             // 
             // txtMarks
             // 
             this.txtMarks.Location = new System.Drawing.Point(340, 57);
             this.txtMarks.Name = "txtMarks";
-            this.txtMarks.Size = new System.Drawing.Size(100, 26);
+            this.txtMarks.Size = new System.Drawing.Size(128, 26);
             this.txtMarks.TabIndex = 1;
             // 
             // txtWeightage
             // 
             this.txtWeightage.Location = new System.Drawing.Point(551, 57);
             this.txtWeightage.Name = "txtWeightage";
-            this.txtWeightage.Size = new System.Drawing.Size(100, 26);
+            this.txtWeightage.Size = new System.Drawing.Size(115, 26);
             this.txtWeightage.TabIndex = 2;
             // 
             // label1
@@ -92,7 +92,7 @@
             // 
             // addEvalBtn
             // 
-            this.addEvalBtn.Location = new System.Drawing.Point(205, 133);
+            this.addEvalBtn.Location = new System.Drawing.Point(219, 156);
             this.addEvalBtn.Name = "addEvalBtn";
             this.addEvalBtn.Size = new System.Drawing.Size(159, 47);
             this.addEvalBtn.TabIndex = 6;
@@ -102,7 +102,7 @@
             // 
             // updateEvalBtn
             // 
-            this.updateEvalBtn.Location = new System.Drawing.Point(417, 133);
+            this.updateEvalBtn.Location = new System.Drawing.Point(410, 156);
             this.updateEvalBtn.Name = "updateEvalBtn";
             this.updateEvalBtn.Size = new System.Drawing.Size(159, 47);
             this.updateEvalBtn.TabIndex = 7;
@@ -112,7 +112,7 @@
             // 
             // delEvalBtn
             // 
-            this.delEvalBtn.Location = new System.Drawing.Point(205, 198);
+            this.delEvalBtn.Location = new System.Drawing.Point(219, 209);
             this.delEvalBtn.Name = "delEvalBtn";
             this.delEvalBtn.Size = new System.Drawing.Size(159, 47);
             this.delEvalBtn.TabIndex = 8;
@@ -122,7 +122,7 @@
             // 
             // refreshBtn
             // 
-            this.refreshBtn.Location = new System.Drawing.Point(417, 198);
+            this.refreshBtn.Location = new System.Drawing.Point(410, 209);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(159, 47);
             this.refreshBtn.TabIndex = 9;
@@ -135,8 +135,11 @@
             this.displayEvaluations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayEvaluations.Location = new System.Drawing.Point(136, 288);
             this.displayEvaluations.Name = "displayEvaluations";
+            this.displayEvaluations.ReadOnly = true;
             this.displayEvaluations.RowHeadersWidth = 62;
+            this.displayEvaluations.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.displayEvaluations.RowTemplate.Height = 28;
+            this.displayEvaluations.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.displayEvaluations.Size = new System.Drawing.Size(505, 150);
             this.displayEvaluations.TabIndex = 10;
             this.displayEvaluations.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayEvaluations_CellClick);

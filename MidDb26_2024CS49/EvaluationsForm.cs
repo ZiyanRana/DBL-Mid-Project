@@ -165,6 +165,7 @@ namespace MidDb26_2024CS49
         private void refreshBtn_Click(object sender, EventArgs e)
         {
             LoadEvaluations();
+            ClearFields();
         }
     }
 }

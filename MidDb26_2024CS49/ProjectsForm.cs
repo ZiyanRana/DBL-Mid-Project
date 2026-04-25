@@ -110,6 +110,7 @@ namespace MidDb26_2024CS49
         private void button4_Click(object sender, EventArgs e)
         {
             LoadProjects();
+            ClearFields();
         }
 
         private void displayProjects_CellClick(object sender, DataGridViewCellEventArgs e)
