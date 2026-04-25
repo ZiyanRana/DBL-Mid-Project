@@ -150,7 +150,6 @@
             this.displayStudents.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.displayStudents.Size = new System.Drawing.Size(722, 198);
             this.displayStudents.TabIndex = 12;
-            this.displayStudents.UseWaitCursor = true;
             this.displayStudents.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayStudents_CellClick);
             this.displayStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayStudents_CellContentClick);
             // 
