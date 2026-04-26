@@ -42,7 +42,7 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(197, 58);
+            this.txtTitle.Location = new System.Drawing.Point(257, 72);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(278, 26);
             this.txtTitle.TabIndex = 0;
@@ -50,7 +50,7 @@
             // txtDescription
             // 
             this.txtDescription.AcceptsTab = true;
-            this.txtDescription.Location = new System.Drawing.Point(197, 134);
+            this.txtDescription.Location = new System.Drawing.Point(257, 148);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(278, 99);
@@ -59,7 +59,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(193, 35);
+            this.label1.Location = new System.Drawing.Point(253, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 20);
             this.label1.TabIndex = 2;
@@ -68,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(197, 108);
+            this.label2.Location = new System.Drawing.Point(257, 122);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 20);
             this.label2.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(197, 256);
+            this.button1.Location = new System.Drawing.Point(193, 286);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(186, 35);
             this.button1.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(417, 256);
+            this.button2.Location = new System.Drawing.Point(413, 286);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(185, 35);
             this.button2.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(198, 299);
+            this.button3.Location = new System.Drawing.Point(194, 329);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(185, 35);
             this.button3.TabIndex = 6;
@@ -106,7 +106,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(417, 297);
+            this.button4.Location = new System.Drawing.Point(413, 327);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(185, 35);
             this.button4.TabIndex = 7;
@@ -117,7 +117,7 @@
             // displayProjects
             // 
             this.displayProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayProjects.Location = new System.Drawing.Point(118, 362);
+            this.displayProjects.Location = new System.Drawing.Point(116, 385);
             this.displayProjects.Name = "displayProjects";
             this.displayProjects.ReadOnly = true;
             this.displayProjects.RowHeadersWidth = 62;
@@ -132,7 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 524);
+            this.ClientSize = new System.Drawing.Size(800, 560);
             this.Controls.Add(this.displayProjects);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);

@@ -152,5 +152,10 @@ namespace MidDb26_2024CS49
             LoadMarks();
             ClearFields();
         }
+
+        private void displayMarks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

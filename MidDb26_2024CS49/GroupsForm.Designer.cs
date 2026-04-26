@@ -42,7 +42,7 @@
             // 
             // createGroupBtn
             // 
-            this.createGroupBtn.Location = new System.Drawing.Point(206, 41);
+            this.createGroupBtn.Location = new System.Drawing.Point(241, 65);
             this.createGroupBtn.Name = "createGroupBtn";
             this.createGroupBtn.Size = new System.Drawing.Size(169, 38);
             this.createGroupBtn.TabIndex = 0;
@@ -53,7 +53,7 @@
             // displayGroups
             // 
             this.displayGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayGroups.Location = new System.Drawing.Point(100, 85);
+            this.displayGroups.Location = new System.Drawing.Point(129, 121);
             this.displayGroups.Name = "displayGroups";
             this.displayGroups.ReadOnly = true;
             this.displayGroups.RowHeadersWidth = 62;
@@ -68,7 +68,7 @@
             // displayGroupMembers
             // 
             this.displayGroupMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayGroupMembers.Location = new System.Drawing.Point(100, 387);
+            this.displayGroupMembers.Location = new System.Drawing.Point(129, 445);
             this.displayGroupMembers.Name = "displayGroupMembers";
             this.displayGroupMembers.ReadOnly = true;
             this.displayGroupMembers.RowHeadersWidth = 62;
@@ -80,7 +80,7 @@
             // 
             // addStudentsBtn
             // 
-            this.addStudentsBtn.Location = new System.Drawing.Point(207, 343);
+            this.addStudentsBtn.Location = new System.Drawing.Point(242, 386);
             this.addStudentsBtn.Name = "addStudentsBtn";
             this.addStudentsBtn.Size = new System.Drawing.Size(168, 38);
             this.addStudentsBtn.TabIndex = 3;
@@ -91,7 +91,7 @@
             // cmbStudents
             // 
             this.cmbStudents.FormattingEnabled = true;
-            this.cmbStudents.Location = new System.Drawing.Point(303, 290);
+            this.cmbStudents.Location = new System.Drawing.Point(334, 343);
             this.cmbStudents.Name = "cmbStudents";
             this.cmbStudents.Size = new System.Drawing.Size(168, 28);
             this.cmbStudents.TabIndex = 4;
@@ -99,7 +99,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(303, 264);
+            this.label1.Location = new System.Drawing.Point(334, 317);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 20);
             this.label1.TabIndex = 5;
@@ -107,7 +107,7 @@
             // 
             // deleteGroupBtn
             // 
-            this.deleteGroupBtn.Location = new System.Drawing.Point(400, 41);
+            this.deleteGroupBtn.Location = new System.Drawing.Point(435, 65);
             this.deleteGroupBtn.Name = "deleteGroupBtn";
             this.deleteGroupBtn.Size = new System.Drawing.Size(155, 38);
             this.deleteGroupBtn.TabIndex = 6;
@@ -117,7 +117,7 @@
             // 
             // removeStudentBtn
             // 
-            this.removeStudentBtn.Location = new System.Drawing.Point(400, 343);
+            this.removeStudentBtn.Location = new System.Drawing.Point(435, 386);
             this.removeStudentBtn.Name = "removeStudentBtn";
             this.removeStudentBtn.Size = new System.Drawing.Size(159, 38);
             this.removeStudentBtn.TabIndex = 7;
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 549);
+            this.ClientSize = new System.Drawing.Size(825, 631);
             this.Controls.Add(this.removeStudentBtn);
             this.Controls.Add(this.deleteGroupBtn);
             this.Controls.Add(this.label1);

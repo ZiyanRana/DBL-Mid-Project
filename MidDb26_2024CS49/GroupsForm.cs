@@ -122,6 +122,9 @@ namespace MidDb26_2024CS49
 
         private void displayGroups_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            var cellValue = displayGroups.Rows[e.RowIndex].Cells["Id"].Value;
+            if (cellValue == null || cellValue == DBNull.Value) return;
+
             if (e.RowIndex >= 0)
             {
                 int groupId = Convert.ToInt32(displayGroups.Rows[e.RowIndex].Cells["Id"].Value);

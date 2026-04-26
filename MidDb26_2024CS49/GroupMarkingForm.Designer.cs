@@ -45,7 +45,7 @@
             // cmbGroups
             // 
             this.cmbGroups.FormattingEnabled = true;
-            this.cmbGroups.Location = new System.Drawing.Point(121, 92);
+            this.cmbGroups.Location = new System.Drawing.Point(124, 104);
             this.cmbGroups.Name = "cmbGroups";
             this.cmbGroups.Size = new System.Drawing.Size(121, 28);
             this.cmbGroups.TabIndex = 0;
@@ -53,7 +53,7 @@
             // cmbEvals
             // 
             this.cmbEvals.FormattingEnabled = true;
-            this.cmbEvals.Location = new System.Drawing.Point(331, 91);
+            this.cmbEvals.Location = new System.Drawing.Point(334, 103);
             this.cmbEvals.Name = "cmbEvals";
             this.cmbEvals.Size = new System.Drawing.Size(127, 28);
             this.cmbEvals.TabIndex = 1;
@@ -61,7 +61,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(117, 69);
+            this.label1.Location = new System.Drawing.Point(120, 81);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 20);
             this.label1.TabIndex = 2;
@@ -70,7 +70,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(327, 68);
+            this.label2.Location = new System.Drawing.Point(330, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(136, 20);
             this.label2.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // txtMarks
             // 
-            this.txtMarks.Location = new System.Drawing.Point(551, 93);
+            this.txtMarks.Location = new System.Drawing.Point(554, 105);
             this.txtMarks.Name = "txtMarks";
             this.txtMarks.Size = new System.Drawing.Size(125, 26);
             this.txtMarks.TabIndex = 4;
@@ -86,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(547, 70);
+            this.label3.Location = new System.Drawing.Point(550, 82);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(125, 20);
             this.label3.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             // assignMarksBtn
             // 
-            this.assignMarksBtn.Location = new System.Drawing.Point(221, 162);
+            this.assignMarksBtn.Location = new System.Drawing.Point(223, 175);
             this.assignMarksBtn.Name = "assignMarksBtn";
             this.assignMarksBtn.Size = new System.Drawing.Size(156, 44);
             this.assignMarksBtn.TabIndex = 6;
@@ -104,7 +104,7 @@
             // 
             // updateMarksBtn
             // 
-            this.updateMarksBtn.Location = new System.Drawing.Point(428, 162);
+            this.updateMarksBtn.Location = new System.Drawing.Point(430, 175);
             this.updateMarksBtn.Name = "updateMarksBtn";
             this.updateMarksBtn.Size = new System.Drawing.Size(156, 44);
             this.updateMarksBtn.TabIndex = 7;
@@ -114,7 +114,7 @@
             // 
             // deleteMarksBtn
             // 
-            this.deleteMarksBtn.Location = new System.Drawing.Point(221, 212);
+            this.deleteMarksBtn.Location = new System.Drawing.Point(223, 225);
             this.deleteMarksBtn.Name = "deleteMarksBtn";
             this.deleteMarksBtn.Size = new System.Drawing.Size(156, 44);
             this.deleteMarksBtn.TabIndex = 8;
@@ -125,16 +125,20 @@
             // displayMarks
             // 
             this.displayMarks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayMarks.Location = new System.Drawing.Point(184, 274);
+            this.displayMarks.Location = new System.Drawing.Point(184, 290);
             this.displayMarks.Name = "displayMarks";
+            this.displayMarks.ReadOnly = true;
             this.displayMarks.RowHeadersWidth = 62;
+            this.displayMarks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.displayMarks.RowTemplate.Height = 28;
+            this.displayMarks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.displayMarks.Size = new System.Drawing.Size(438, 150);
             this.displayMarks.TabIndex = 9;
+            this.displayMarks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.displayMarks_CellContentClick);
             // 
             // refreshBtn
             // 
-            this.refreshBtn.Location = new System.Drawing.Point(428, 212);
+            this.refreshBtn.Location = new System.Drawing.Point(430, 225);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(156, 44);
             this.refreshBtn.TabIndex = 10;
@@ -146,7 +150,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 473);
             this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.displayMarks);
             this.Controls.Add(this.deleteMarksBtn);
