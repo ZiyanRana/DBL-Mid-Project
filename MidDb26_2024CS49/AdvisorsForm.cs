@@ -107,7 +107,9 @@ namespace MidDb26_2024CS49
             try
             {
                 if (!ValidateInputs()) return;
-                string checkQuery = $"SELECT * FROM person p WHERE p.Email = '{txtEmail.Text}';";
+                string checkQuery = $@"SELECT p.Id FROM person p 
+                                       JOIN advisor a ON a.Id = p.Id
+                                       WHERE p.Email = '{txtEmail.Text};";
                 if (db.GetData(checkQuery).Rows.Count > 0)
                 {
                     MessageBox.Show("Advisor already exist!");
