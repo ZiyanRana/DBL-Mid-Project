@@ -34,7 +34,7 @@ namespace MidDb26_2024CS49
             string query = @"
                             SELECT a.Id, CONCAT(p.FirstName, ' ', p.LastName) AS AdvisorName
                             FROM advisor a
-                            JOIN person p ON a.Id = p.Id";
+                            JOIN person p ON a.Id = p.Id;";
 
             DataTable dt = db.GetData(query);
 
@@ -73,12 +73,20 @@ namespace MidDb26_2024CS49
             displayAssignments.Columns["AdvisorId"].Visible = false;
         }
 
+        void ClearFields()
+        {
+            cmbProjects.SelectedValue = -1;
+            cmbAdvisors.SelectedValue = -1;
+            cmbRoles.SelectedValue = -1;
+        }
+
         private void ProjectAdvisorsForm_Load(object sender, EventArgs e)
         {
             LoadProjects();
             LoadAdvisors();
             LoadRoles();
             LoadAssignments();
+            ClearFields();
         }
 
         private void assignAdvisorBtn_Click(object sender, EventArgs e)
@@ -141,6 +149,17 @@ namespace MidDb26_2024CS49
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void cmbAdvisors_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshBtn_Click(object sender, EventArgs e)
+        {
+            LoadAssignments();
+            ClearFields();
         }
     }
 }

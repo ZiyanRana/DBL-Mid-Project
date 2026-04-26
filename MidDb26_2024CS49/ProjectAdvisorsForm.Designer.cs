@@ -37,28 +37,30 @@
             this.cmbProjects = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.removeAdvisorBtn = new System.Windows.Forms.Button();
+            this.refreshBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.displayAssignments)).BeginInit();
             this.SuspendLayout();
             // 
             // cmbAdvisors
             // 
             this.cmbAdvisors.FormattingEnabled = true;
-            this.cmbAdvisors.Location = new System.Drawing.Point(295, 73);
+            this.cmbAdvisors.Location = new System.Drawing.Point(312, 85);
             this.cmbAdvisors.Name = "cmbAdvisors";
             this.cmbAdvisors.Size = new System.Drawing.Size(131, 28);
             this.cmbAdvisors.TabIndex = 0;
+            this.cmbAdvisors.SelectedIndexChanged += new System.EventHandler(this.cmbAdvisors_SelectedIndexChanged);
             // 
             // cmbRoles
             // 
             this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.Location = new System.Drawing.Point(468, 73);
+            this.cmbRoles.Location = new System.Drawing.Point(489, 85);
             this.cmbRoles.Name = "cmbRoles";
             this.cmbRoles.Size = new System.Drawing.Size(127, 28);
             this.cmbRoles.TabIndex = 1;
             // 
             // assignAdvisorBtn
             // 
-            this.assignAdvisorBtn.Location = new System.Drawing.Point(213, 176);
+            this.assignAdvisorBtn.Location = new System.Drawing.Point(126, 176);
             this.assignAdvisorBtn.Name = "assignAdvisorBtn";
             this.assignAdvisorBtn.Size = new System.Drawing.Size(149, 39);
             this.assignAdvisorBtn.TabIndex = 2;
@@ -69,20 +71,20 @@
             // displayAssignments
             // 
             this.displayAssignments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayAssignments.Location = new System.Drawing.Point(130, 247);
+            this.displayAssignments.Location = new System.Drawing.Point(130, 244);
             this.displayAssignments.Name = "displayAssignments";
             this.displayAssignments.ReadOnly = true;
             this.displayAssignments.RowHeadersWidth = 62;
             this.displayAssignments.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.displayAssignments.RowTemplate.Height = 28;
             this.displayAssignments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.displayAssignments.Size = new System.Drawing.Size(465, 150);
+            this.displayAssignments.Size = new System.Drawing.Size(486, 150);
             this.displayAssignments.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(291, 47);
+            this.label1.Location = new System.Drawing.Point(308, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 20);
             this.label1.TabIndex = 4;
@@ -91,7 +93,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(468, 47);
+            this.label2.Location = new System.Drawing.Point(489, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 20);
             this.label2.TabIndex = 5;
@@ -100,15 +102,15 @@
             // cmbProjects
             // 
             this.cmbProjects.FormattingEnabled = true;
-            this.cmbProjects.Location = new System.Drawing.Point(126, 73);
+            this.cmbProjects.Location = new System.Drawing.Point(126, 85);
             this.cmbProjects.Name = "cmbProjects";
-            this.cmbProjects.Size = new System.Drawing.Size(129, 28);
+            this.cmbProjects.Size = new System.Drawing.Size(138, 28);
             this.cmbProjects.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(126, 46);
+            this.label3.Location = new System.Drawing.Point(126, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(107, 20);
             this.label3.TabIndex = 7;
@@ -116,7 +118,7 @@
             // 
             // removeAdvisorBtn
             // 
-            this.removeAdvisorBtn.Location = new System.Drawing.Point(388, 176);
+            this.removeAdvisorBtn.Location = new System.Drawing.Point(295, 176);
             this.removeAdvisorBtn.Name = "removeAdvisorBtn";
             this.removeAdvisorBtn.Size = new System.Drawing.Size(148, 39);
             this.removeAdvisorBtn.TabIndex = 8;
@@ -124,11 +126,22 @@
             this.removeAdvisorBtn.UseVisualStyleBackColor = true;
             this.removeAdvisorBtn.Click += new System.EventHandler(this.removeAdvisorBtn_Click);
             // 
+            // refreshBtn
+            // 
+            this.refreshBtn.Location = new System.Drawing.Point(468, 176);
+            this.refreshBtn.Name = "refreshBtn";
+            this.refreshBtn.Size = new System.Drawing.Size(148, 39);
+            this.refreshBtn.TabIndex = 9;
+            this.refreshBtn.Text = "Refresh";
+            this.refreshBtn.UseVisualStyleBackColor = true;
+            this.refreshBtn.Click += new System.EventHandler(this.refreshBtn_Click);
+            // 
             // ProjectAdvisorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(753, 450);
+            this.Controls.Add(this.refreshBtn);
             this.Controls.Add(this.removeAdvisorBtn);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbProjects);
@@ -158,5 +171,6 @@
         private System.Windows.Forms.ComboBox cmbProjects;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button removeAdvisorBtn;
+        private System.Windows.Forms.Button refreshBtn;
     }
 }
