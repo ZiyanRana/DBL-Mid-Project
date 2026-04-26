@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
@@ -32,6 +33,38 @@ namespace MidDb26_2024CS49
             txtWeightage.Text = "";
         }
 
+        bool ValidateInputs()
+        {
+            if (txtName.Text.Trim() == "")
+            {
+                MessageBox.Show("Evaluation name is required!");
+                return false;
+            }
+            else if (txtMarks.Text == "")
+            {
+                MessageBox.Show("Total Marks are required!");
+                return false; ;
+            }
+            else if (txtWeightage.Text == "")
+            {
+                MessageBox.Show("Weightage is required!");
+                return false; ;
+            }
+
+            if (!int.TryParse(txtMarks.Text, out _))
+            {
+                MessageBox.Show("Enter valid total marks");
+                return false;
+            }
+
+            if (!int.TryParse(txtWeightage.Text, out _))
+            {
+                MessageBox.Show("Enter valid weightage");
+                return false; ;
+            }
+            return true;
+        }
+
         private void EvaluationsForm_Load(object sender, EventArgs e)
         {
             LoadEvaluations();
@@ -58,40 +91,11 @@ namespace MidDb26_2024CS49
         {
             try
             {
-                if (txtName.Text.Trim() == "")
-                {
-                    MessageBox.Show("Evaluation name is required!");
-                    return;
-                }
-                else if (txtMarks.Text == "")
-                {
-                    MessageBox.Show("Total Marks are required!");
-                    return;
-                }
-                else if (txtWeightage.Text == "")
-                {
-                    MessageBox.Show("Weightage is required!");
-                    return;
-                }
-
-                if (!int.TryParse(txtMarks.Text, out _))
-                {
-                    MessageBox.Show("Enter valid total marks");
-                    return;
-                }
-
-                if (!int.TryParse(txtWeightage.Text, out _))
-                {
-                    MessageBox.Show("Enter valid weightage");
-                    return;
-                }
+                if (!ValidateInputs()) return;
 
                 string query = $@"
                                 INSERT INTO evaluation (Name, TotalMarks, TotalWeightage)
-                                VALUES
-                                (
-                                    '{txtName.Text}', {txtMarks.Text}, {txtWeightage.Text}
-                                )";
+                                VALUES ('{txtName.Text}', {txtMarks.Text}, {txtWeightage.Text})";
                 db.ExecuteQuery(query);
                 MessageBox.Show("Evaluation Added");
 
@@ -109,21 +113,7 @@ namespace MidDb26_2024CS49
         {
             try
             {
-                if (txtName.Text.Trim() == "")
-                {
-                    MessageBox.Show("Evaluation name is required!");
-                    return;
-                }
-                else if (txtMarks.Text == "")
-                {
-                    MessageBox.Show("Total Marks are required!");
-                    return;
-                }
-                else if (txtWeightage.Text == "")
-                {
-                    MessageBox.Show("Weightage is required!");
-                    return;
-                }
+                if (!ValidateInputs()) return;
 
                 int id = Convert.ToInt32(displayEvaluations.CurrentRow.Cells["Id"].Value);
                 string query = $@"
@@ -149,11 +139,11 @@ namespace MidDb26_2024CS49
             try
             {
                 int id = Convert.ToInt32(displayEvaluations.CurrentRow.Cells["Id"].Value);
-                string query = $@"
-                                DELETE FROM evaluation
-                                WHERE Id = {id};";
+                string query = $"DELETE FROM evaluation WHERE Id = {id};";
 
-                MessageBox.Show("Deleted!");
+                db.ExecuteQuery(query);
+
+                MessageBox.Show("Evaluation Deleted!");
                 LoadEvaluations();
             }
             catch (Exception ex)
