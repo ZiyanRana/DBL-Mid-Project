@@ -21,16 +21,29 @@ namespace MidDb26_2024CS49
 
         void LoadStudents()
         {
-            string query = @"SELECT s.Id, p.FirstName, p.LastName, p.Email, s.RegistrationNo
+            string query = @"SELECT s.Id, p.FirstName, p.LastName, p.Email, s.RegistrationNo, p.Gender AS GenderId, l.Value AS Gender
                      FROM student s
-                     JOIN person p ON s.Id = p.Id";
+                     JOIN person p ON s.Id = p.Id
+                     JOIN lookup l ON p.Gender = l.Id;";
 
             displayStudents.DataSource = db.GetData(query);
+            displayStudents.Columns["GenderId"].Visible = false;
+        }
+
+        void LoadGenders()
+        {
+            string query = "SELECT Id, Value FROM lookup WHERE Category = 'GENDER';";
+
+            DataTable dt = db.GetData(query);
+            cmbGender.DataSource = dt;
+            cmbGender.DisplayMember = "Value";
+            cmbGender.ValueMember = "Id";
         }
 
         private void StudentForm_Load(object sender, EventArgs e)
         {
             LoadStudents();
+            LoadGenders();
         }
 
         void ClearFields()
@@ -39,6 +52,7 @@ namespace MidDb26_2024CS49
             txtLastname.Text = "";
             txtEmail.Text = "";
             txtRegno.Text = "";
+            cmbGender.SelectedValue = -1;
         }
 
         private void addStudentBtn_Click(object sender, EventArgs e)
@@ -47,14 +61,15 @@ namespace MidDb26_2024CS49
 
             try
             {
-                string checkQuery = $"SELECT * FROM student WHERE RegistrationNo = '{txtRegno.Text}'";
+                string checkQuery = $"SELECT * FROM student WHERE RegistrationNo = '{txtRegno.Text}';";
                 if (db.GetData(checkQuery).Rows.Count > 0)
                 {
-                    MessageBox.Show("Registration Number already exists!");
+                    MessageBox.Show("Student with this registration number or email already exists!");
                     return;
                 }
 
-                string query1 = $"INSERT INTO person (FirstName, LastName, Email) VALUES ('{txtFirstname.Text}', '{txtLastname.Text}', '{txtEmail.Text}')";
+                int gender = Convert.ToInt32(cmbGender.SelectedValue);
+                string query1 = $"INSERT INTO person (FirstName, LastName, Email, Gender) VALUES ('{txtFirstname.Text}', '{txtLastname.Text}', '{txtEmail.Text}', {gender});";
                 db.ExecuteQuery(query1);
 
                 string getId = "SELECT LAST_INSERT_ID()";
@@ -143,8 +158,9 @@ namespace MidDb26_2024CS49
             try
             {
                 int id = Convert.ToInt32(displayStudents.CurrentRow.Cells["Id"].Value);
+                int gender = Convert.ToInt32(cmbGender.SelectedValue);
 
-                string query1 = $"UPDATE person SET FirstName='{txtFirstname.Text}', LastName='{txtLastname.Text}', Email='{txtEmail.Text}' WHERE Id={id}";
+                string query1 = $"UPDATE person SET FirstName='{txtFirstname.Text}', LastName='{txtLastname.Text}', Email='{txtEmail.Text}', Gender='{gender}' WHERE Id={id};";
                 string query2 = $"UPDATE student SET RegistrationNo='{txtRegno.Text}' WHERE Id={id}";
 
                 db.ExecuteQuery(query1);
@@ -163,14 +179,22 @@ namespace MidDb26_2024CS49
 
         private void displayStudents_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            try
             {
-                DataGridViewRow row = displayStudents.Rows[e.RowIndex];
+                if (e.RowIndex < 0) return;
+                var row = displayStudents.Rows[e.RowIndex];
+
+                if (row.Cells["Id"].Value == null || row.Cells["Id"].Value == DBNull.Value) return;
 
                 txtFirstname.Text = row.Cells["FirstName"].Value.ToString();
                 txtLastname.Text = row.Cells["LastName"].Value.ToString();
                 txtEmail.Text = row.Cells["Email"].Value.ToString();
                 txtRegno.Text = row.Cells["RegistrationNo"].Value.ToString();
+                cmbGender.SelectedValue = row.Cells["GenderId"].Value;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 

@@ -41,13 +41,15 @@
             this.refreshBtn = new System.Windows.Forms.Button();
             this.displayStudents = new System.Windows.Forms.DataGridView();
             this.updateStudentBtn = new System.Windows.Forms.Button();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.displayStudents)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(204, 64);
+            this.label1.Location = new System.Drawing.Point(204, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 20);
             this.label1.TabIndex = 0;
@@ -55,7 +57,7 @@
             // 
             // txtFirstname
             // 
-            this.txtFirstname.Location = new System.Drawing.Point(208, 87);
+            this.txtFirstname.Location = new System.Drawing.Point(208, 77);
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(141, 26);
             this.txtFirstname.TabIndex = 1;
@@ -63,7 +65,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(473, 64);
+            this.label2.Location = new System.Drawing.Point(473, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 2;
@@ -72,7 +74,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(204, 158);
+            this.label3.Location = new System.Drawing.Point(204, 131);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 3;
@@ -81,7 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(473, 158);
+            this.label4.Location = new System.Drawing.Point(473, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(123, 20);
             this.label4.TabIndex = 4;
@@ -89,28 +91,28 @@
             // 
             // txtLastname
             // 
-            this.txtLastname.Location = new System.Drawing.Point(477, 87);
+            this.txtLastname.Location = new System.Drawing.Point(477, 77);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(134, 26);
             this.txtLastname.TabIndex = 5;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(208, 181);
+            this.txtEmail.Location = new System.Drawing.Point(208, 154);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(141, 26);
             this.txtEmail.TabIndex = 6;
             // 
             // txtRegno
             // 
-            this.txtRegno.Location = new System.Drawing.Point(477, 181);
+            this.txtRegno.Location = new System.Drawing.Point(477, 154);
             this.txtRegno.Name = "txtRegno";
             this.txtRegno.Size = new System.Drawing.Size(134, 26);
             this.txtRegno.TabIndex = 7;
             // 
             // addStudentBtn
             // 
-            this.addStudentBtn.Location = new System.Drawing.Point(96, 276);
+            this.addStudentBtn.Location = new System.Drawing.Point(96, 302);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(147, 36);
             this.addStudentBtn.TabIndex = 9;
@@ -120,7 +122,7 @@
             // 
             // deleteStudentBtn
             // 
-            this.deleteStudentBtn.Location = new System.Drawing.Point(431, 276);
+            this.deleteStudentBtn.Location = new System.Drawing.Point(431, 302);
             this.deleteStudentBtn.Name = "deleteStudentBtn";
             this.deleteStudentBtn.Size = new System.Drawing.Size(147, 36);
             this.deleteStudentBtn.TabIndex = 10;
@@ -130,7 +132,7 @@
             // 
             // refreshBtn
             // 
-            this.refreshBtn.Location = new System.Drawing.Point(598, 276);
+            this.refreshBtn.Location = new System.Drawing.Point(598, 302);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(147, 36);
             this.refreshBtn.TabIndex = 11;
@@ -141,7 +143,7 @@
             // displayStudents
             // 
             this.displayStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayStudents.Location = new System.Drawing.Point(54, 339);
+            this.displayStudents.Location = new System.Drawing.Point(54, 365);
             this.displayStudents.Name = "displayStudents";
             this.displayStudents.ReadOnly = true;
             this.displayStudents.RowHeadersWidth = 62;
@@ -155,7 +157,7 @@
             // 
             // updateStudentBtn
             // 
-            this.updateStudentBtn.Location = new System.Drawing.Point(265, 276);
+            this.updateStudentBtn.Location = new System.Drawing.Point(265, 302);
             this.updateStudentBtn.Name = "updateStudentBtn";
             this.updateStudentBtn.Size = new System.Drawing.Size(146, 36);
             this.updateStudentBtn.TabIndex = 13;
@@ -163,11 +165,30 @@
             this.updateStudentBtn.UseVisualStyleBackColor = true;
             this.updateStudentBtn.Click += new System.EventHandler(this.updateStudentBtn_Click);
             // 
+            // cmbGender
+            // 
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Location = new System.Drawing.Point(353, 239);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(121, 28);
+            this.cmbGender.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(353, 213);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(116, 20);
+            this.label5.TabIndex = 15;
+            this.label5.Text = "Select Gender:";
+            // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 575);
+            this.ClientSize = new System.Drawing.Size(840, 593);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cmbGender);
             this.Controls.Add(this.updateStudentBtn);
             this.Controls.Add(this.displayStudents);
             this.Controls.Add(this.refreshBtn);
@@ -205,5 +226,7 @@
         private System.Windows.Forms.Button refreshBtn;
         private System.Windows.Forms.DataGridView displayStudents;
         private System.Windows.Forms.Button updateStudentBtn;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.Label label5;
     }
 }
