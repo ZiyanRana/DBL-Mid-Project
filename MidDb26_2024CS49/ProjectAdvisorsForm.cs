@@ -86,7 +86,6 @@ namespace MidDb26_2024CS49
             LoadAdvisors();
             LoadRoles();
             LoadAssignments();
-            ClearFields();
         }
 
         private void assignAdvisorBtn_Click(object sender, EventArgs e)
@@ -128,9 +127,9 @@ namespace MidDb26_2024CS49
         {
             try
             {
-                if (displayAssignments.CurrentRow == null)
+                if (displayAssignments.CurrentRow != null)
                 {
-                    MessageBox.Show("Select a row first");
+                    if (MessageBox.Show("Are you sure you want to remove this advisor?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
                 }
 
