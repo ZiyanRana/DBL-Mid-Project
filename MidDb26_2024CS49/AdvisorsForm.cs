@@ -109,7 +109,7 @@ namespace MidDb26_2024CS49
                 if (!ValidateInputs()) return;
                 string checkQuery = $@"SELECT p.Id FROM person p 
                                        JOIN advisor a ON a.Id = p.Id
-                                       WHERE p.Email = '{txtEmail.Text};";
+                                       WHERE p.Email = '{txtEmail.Text}';";
                 if (db.GetData(checkQuery).Rows.Count > 0)
                 {
                     MessageBox.Show("Advisor already exist!");
@@ -136,6 +136,16 @@ namespace MidDb26_2024CS49
             try
             {
                 if (!ValidateInputs()) return;
+
+                string checkQuery = $@"SELECT p.Id FROM person p 
+                                       JOIN advisor a ON a.Id = p.Id
+                                       WHERE p.Email = '{txtEmail.Text}';";
+                if (db.GetData(checkQuery).Rows.Count > 0)
+                {
+                    MessageBox.Show("Advisor already exist!");
+                    return;
+                }
+
                 int id = Convert.ToInt32(displayAdvisors.CurrentRow.Cells["Id"].Value);
                 int designationId = Convert.ToInt32(cmbDesignation.SelectedValue);
                 int gender = Convert.ToInt32(cmbGender.SelectedValue);
@@ -154,14 +164,17 @@ namespace MidDb26_2024CS49
         }
         private void deleteAdvisorBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Delete this advisor?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
             try
             {
+                if (displayAdvisors.CurrentRow != null)
+                {
+                    if (MessageBox.Show("Delete this advisor?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                }
                 int id = Convert.ToInt32(displayAdvisors.CurrentRow.Cells["Id"].Value);
                 db.ExecuteQuery($"DELETE FROM advisor WHERE Id = {id}");
                 db.ExecuteQuery($"DELETE FROM person WHERE Id = {id}");
-                MessageBox.Show("Deleted!");
+                MessageBox.Show("Advisor deleted successfully!");
                 ClearFields();
                 LoadAdvisors();
             }
