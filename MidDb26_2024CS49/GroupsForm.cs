@@ -26,10 +26,9 @@ namespace MidDb26_2024CS49
 
         void LoadStudents()
         {
-            string query = @"
-                            SELECT s.Id, CONCAT(p.FirstName, ' ', p.LastName, ' - ', s.RegistrationNo) AS StudentInfo
-                            FROM student s
-                            JOIN person p ON s.Id = p.Id";
+            string query = @" SELECT s.Id, CONCAT(p.FirstName, ' ', p.LastName, ' - ', s.RegistrationNo) AS StudentInfo
+                              FROM student s
+                              JOIN person p ON s.Id = p.Id;";
 
             DataTable dt = db.GetData(query);
             cmbStudents.DataSource = dt;
@@ -39,12 +38,11 @@ namespace MidDb26_2024CS49
 
         void LoadGroupMembers(int groupId)
         {
-            string query = $@"
-                            SELECT s.Id AS StudentId, p.FirstName, p.LastName, s.RegistrationNo
-                            FROM groupstudent gs
-                            JOIN student s ON gs.StudentId = s.Id
-                            JOIN person p ON s.Id = p.Id
-                            WHERE gs.GroupId = {groupId}";
+            string query = $@" SELECT s.Id AS StudentId, p.FirstName, p.LastName, s.RegistrationNo
+                               FROM groupstudent gs
+                               JOIN student s ON gs.StudentId = s.Id
+                               JOIN person p ON s.Id = p.Id
+                               WHERE gs.GroupId = {groupId}";
 
             displayGroupMembers.DataSource = db.GetData(query);
             displayGroupMembers.Columns["StudentId"].Visible = false;
@@ -69,6 +67,12 @@ namespace MidDb26_2024CS49
 
                 int groupId = Convert.ToInt32(displayGroups.CurrentRow.Cells["Id"].Value);
                 int studentId = Convert.ToInt32(cmbStudents.SelectedValue);
+
+                if (studentId == 0)
+                {
+                    MessageBox.Show("No student selected!");
+                    return;
+                }
 
                 string checkQuery = $@"
                                      SELECT * FROM groupstudent
@@ -136,9 +140,9 @@ namespace MidDb26_2024CS49
         {
             try
             {
-                if (displayGroups.CurrentRow == null)
+                if (displayGroups.CurrentRow != null)
                 {
-                    MessageBox.Show("Select a group first!");
+                    if (MessageBox.Show("Delete this group?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
                 }
 
@@ -164,14 +168,20 @@ namespace MidDb26_2024CS49
         {
             try
             {
-                if (displayGroups.CurrentRow == null || displayGroupMembers.CurrentRow == null)
-                {
-                    MessageBox.Show("Select group and student first!");
+                if (displayGroups.CurrentRow != null && displayGroupMembers.CurrentRow != null)
+                {  
+                    if (MessageBox.Show("Remove this student?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
                     return;
                 }
 
                 int groupId = Convert.ToInt32(displayGroups.CurrentRow.Cells["Id"].Value);
                 int studentId = Convert.ToInt32(displayGroupMembers.CurrentRow.Cells["StudentId"].Value);
+
+                if (studentId == 0)
+                {
+                    MessageBox.Show("No student selected!");
+                    return;
+                }
 
                 string query = $@"
                                 DELETE FROM groupstudent
