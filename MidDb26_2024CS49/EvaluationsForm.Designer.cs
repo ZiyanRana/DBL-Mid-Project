@@ -44,6 +44,7 @@
             // 
             // txtName
             // 
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtName.Location = new System.Drawing.Point(139, 97);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(139, 26);
@@ -51,6 +52,7 @@
             // 
             // txtMarks
             // 
+            this.txtMarks.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMarks.Location = new System.Drawing.Point(347, 97);
             this.txtMarks.Name = "txtMarks";
             this.txtMarks.Size = new System.Drawing.Size(128, 26);
@@ -58,6 +60,7 @@
             // 
             // txtWeightage
             // 
+            this.txtWeightage.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtWeightage.Location = new System.Drawing.Point(558, 97);
             this.txtWeightage.Name = "txtWeightage";
             this.txtWeightage.Size = new System.Drawing.Size(115, 26);
@@ -65,6 +68,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(139, 71);
             this.label1.Name = "label1";
@@ -74,6 +78,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(347, 71);
             this.label2.Name = "label2";
@@ -83,6 +88,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(558, 71);
             this.label3.Name = "label3";
@@ -92,6 +98,7 @@
             // 
             // addEvalBtn
             // 
+            this.addEvalBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addEvalBtn.Location = new System.Drawing.Point(232, 180);
             this.addEvalBtn.Name = "addEvalBtn";
             this.addEvalBtn.Size = new System.Drawing.Size(159, 47);
@@ -102,6 +109,7 @@
             // 
             // updateEvalBtn
             // 
+            this.updateEvalBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.updateEvalBtn.Location = new System.Drawing.Point(423, 180);
             this.updateEvalBtn.Name = "updateEvalBtn";
             this.updateEvalBtn.Size = new System.Drawing.Size(159, 47);
@@ -112,6 +120,7 @@
             // 
             // delEvalBtn
             // 
+            this.delEvalBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.delEvalBtn.Location = new System.Drawing.Point(232, 233);
             this.delEvalBtn.Name = "delEvalBtn";
             this.delEvalBtn.Size = new System.Drawing.Size(159, 47);
@@ -122,6 +131,7 @@
             // 
             // refreshBtn
             // 
+            this.refreshBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.refreshBtn.Location = new System.Drawing.Point(423, 233);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(159, 47);
@@ -132,6 +142,10 @@
             // 
             // displayEvaluations
             // 
+            this.displayEvaluations.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayEvaluations.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.displayEvaluations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayEvaluations.Location = new System.Drawing.Point(149, 305);
             this.displayEvaluations.Name = "displayEvaluations";

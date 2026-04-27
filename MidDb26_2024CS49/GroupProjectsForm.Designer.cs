@@ -40,6 +40,7 @@
             // 
             // cmbGroups
             // 
+            this.cmbGroups.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbGroups.FormattingEnabled = true;
             this.cmbGroups.Location = new System.Drawing.Point(196, 92);
             this.cmbGroups.Name = "cmbGroups";
@@ -48,6 +49,7 @@
             // 
             // cmbProjects
             // 
+            this.cmbProjects.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbProjects.FormattingEnabled = true;
             this.cmbProjects.Location = new System.Drawing.Point(406, 92);
             this.cmbProjects.Name = "cmbProjects";
@@ -56,6 +58,7 @@
             // 
             // assignBtn
             // 
+            this.assignBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.assignBtn.Location = new System.Drawing.Point(196, 183);
             this.assignBtn.Name = "assignBtn";
             this.assignBtn.Size = new System.Drawing.Size(173, 45);
@@ -66,6 +69,10 @@
             // 
             // displayAssignments
             // 
+            this.displayAssignments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayAssignments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.displayAssignments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayAssignments.Location = new System.Drawing.Point(163, 248);
             this.displayAssignments.Name = "displayAssignments";
@@ -79,6 +86,7 @@
             // 
             // removeAssignmentBtn
             // 
+            this.removeAssignmentBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.removeAssignmentBtn.Location = new System.Drawing.Point(382, 183);
             this.removeAssignmentBtn.Name = "removeAssignmentBtn";
             this.removeAssignmentBtn.Size = new System.Drawing.Size(182, 45);
@@ -89,6 +97,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(196, 66);
             this.label1.Name = "label1";
@@ -98,6 +107,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(406, 66);
             this.label2.Name = "label2";

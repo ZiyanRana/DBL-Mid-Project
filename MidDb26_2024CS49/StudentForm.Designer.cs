@@ -48,6 +48,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(204, 54);
             this.label1.Name = "label1";
@@ -57,6 +58,7 @@
             // 
             // txtFirstname
             // 
+            this.txtFirstname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtFirstname.Location = new System.Drawing.Point(208, 77);
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(141, 26);
@@ -64,6 +66,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(473, 54);
             this.label2.Name = "label2";
@@ -73,6 +76,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(204, 131);
             this.label3.Name = "label3";
@@ -82,6 +86,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(473, 131);
             this.label4.Name = "label4";
@@ -91,6 +96,7 @@
             // 
             // txtLastname
             // 
+            this.txtLastname.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtLastname.Location = new System.Drawing.Point(477, 77);
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(134, 26);
@@ -98,6 +104,7 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtEmail.Location = new System.Drawing.Point(208, 154);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(141, 26);
@@ -105,6 +112,7 @@
             // 
             // txtRegno
             // 
+            this.txtRegno.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtRegno.Location = new System.Drawing.Point(477, 154);
             this.txtRegno.Name = "txtRegno";
             this.txtRegno.Size = new System.Drawing.Size(134, 26);
@@ -112,6 +120,7 @@
             // 
             // addStudentBtn
             // 
+            this.addStudentBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addStudentBtn.Location = new System.Drawing.Point(96, 302);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(147, 36);
@@ -122,6 +131,7 @@
             // 
             // deleteStudentBtn
             // 
+            this.deleteStudentBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.deleteStudentBtn.Location = new System.Drawing.Point(431, 302);
             this.deleteStudentBtn.Name = "deleteStudentBtn";
             this.deleteStudentBtn.Size = new System.Drawing.Size(147, 36);
@@ -132,6 +142,7 @@
             // 
             // refreshBtn
             // 
+            this.refreshBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.refreshBtn.Location = new System.Drawing.Point(598, 302);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(147, 36);
@@ -142,6 +153,10 @@
             // 
             // displayStudents
             // 
+            this.displayStudents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.displayStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayStudents.Location = new System.Drawing.Point(54, 365);
             this.displayStudents.Name = "displayStudents";
@@ -157,6 +172,7 @@
             // 
             // updateStudentBtn
             // 
+            this.updateStudentBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.updateStudentBtn.Location = new System.Drawing.Point(265, 302);
             this.updateStudentBtn.Name = "updateStudentBtn";
             this.updateStudentBtn.Size = new System.Drawing.Size(146, 36);
@@ -167,6 +183,7 @@
             // 
             // cmbGender
             // 
+            this.cmbGender.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbGender.FormattingEnabled = true;
             this.cmbGender.Location = new System.Drawing.Point(353, 239);
             this.cmbGender.Name = "cmbGender";
@@ -175,6 +192,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(353, 213);
             this.label5.Name = "label5";
@@ -186,7 +204,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(840, 593);
+            this.ClientSize = new System.Drawing.Size(831, 644);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbGender);
             this.Controls.Add(this.updateStudentBtn);

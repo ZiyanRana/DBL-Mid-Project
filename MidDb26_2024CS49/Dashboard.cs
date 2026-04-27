@@ -70,5 +70,15 @@ namespace MidDb26_2024CS49
             ReportsForm form = new ReportsForm();
             form.Show();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

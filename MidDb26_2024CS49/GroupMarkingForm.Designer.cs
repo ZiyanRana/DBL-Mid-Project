@@ -44,6 +44,7 @@
             // 
             // cmbGroups
             // 
+            this.cmbGroups.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbGroups.FormattingEnabled = true;
             this.cmbGroups.Location = new System.Drawing.Point(124, 104);
             this.cmbGroups.Name = "cmbGroups";
@@ -52,6 +53,7 @@
             // 
             // cmbEvals
             // 
+            this.cmbEvals.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbEvals.FormattingEnabled = true;
             this.cmbEvals.Location = new System.Drawing.Point(334, 103);
             this.cmbEvals.Name = "cmbEvals";
@@ -60,6 +62,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(120, 81);
             this.label1.Name = "label1";
@@ -69,6 +72,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(330, 80);
             this.label2.Name = "label2";
@@ -78,6 +82,7 @@
             // 
             // txtMarks
             // 
+            this.txtMarks.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMarks.Location = new System.Drawing.Point(554, 105);
             this.txtMarks.Name = "txtMarks";
             this.txtMarks.Size = new System.Drawing.Size(125, 26);
@@ -85,6 +90,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(550, 82);
             this.label3.Name = "label3";
@@ -94,6 +100,7 @@
             // 
             // assignMarksBtn
             // 
+            this.assignMarksBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.assignMarksBtn.Location = new System.Drawing.Point(223, 175);
             this.assignMarksBtn.Name = "assignMarksBtn";
             this.assignMarksBtn.Size = new System.Drawing.Size(156, 44);
@@ -104,6 +111,7 @@
             // 
             // updateMarksBtn
             // 
+            this.updateMarksBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.updateMarksBtn.Location = new System.Drawing.Point(430, 175);
             this.updateMarksBtn.Name = "updateMarksBtn";
             this.updateMarksBtn.Size = new System.Drawing.Size(156, 44);
@@ -114,6 +122,7 @@
             // 
             // deleteMarksBtn
             // 
+            this.deleteMarksBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.deleteMarksBtn.Location = new System.Drawing.Point(223, 225);
             this.deleteMarksBtn.Name = "deleteMarksBtn";
             this.deleteMarksBtn.Size = new System.Drawing.Size(156, 44);
@@ -124,6 +133,10 @@
             // 
             // displayMarks
             // 
+            this.displayMarks.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayMarks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.displayMarks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayMarks.Location = new System.Drawing.Point(184, 290);
             this.displayMarks.Name = "displayMarks";
@@ -138,6 +151,7 @@
             // 
             // refreshBtn
             // 
+            this.refreshBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.refreshBtn.Location = new System.Drawing.Point(430, 225);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(156, 44);

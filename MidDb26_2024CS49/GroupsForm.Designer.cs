@@ -42,6 +42,7 @@
             // 
             // createGroupBtn
             // 
+            this.createGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.createGroupBtn.Location = new System.Drawing.Point(241, 65);
             this.createGroupBtn.Name = "createGroupBtn";
             this.createGroupBtn.Size = new System.Drawing.Size(169, 38);
@@ -52,6 +53,9 @@
             // 
             // displayGroups
             // 
+            this.displayGroups.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.displayGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayGroups.Location = new System.Drawing.Point(129, 121);
             this.displayGroups.Name = "displayGroups";
@@ -67,6 +71,10 @@
             // 
             // displayGroupMembers
             // 
+            this.displayGroupMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayGroupMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.displayGroupMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayGroupMembers.Location = new System.Drawing.Point(129, 445);
             this.displayGroupMembers.Name = "displayGroupMembers";
@@ -80,6 +88,7 @@
             // 
             // addStudentsBtn
             // 
+            this.addStudentsBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addStudentsBtn.Location = new System.Drawing.Point(242, 386);
             this.addStudentsBtn.Name = "addStudentsBtn";
             this.addStudentsBtn.Size = new System.Drawing.Size(168, 38);
@@ -90,6 +99,7 @@
             // 
             // cmbStudents
             // 
+            this.cmbStudents.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbStudents.FormattingEnabled = true;
             this.cmbStudents.Location = new System.Drawing.Point(334, 343);
             this.cmbStudents.Name = "cmbStudents";
@@ -98,6 +108,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(334, 317);
             this.label1.Name = "label1";
@@ -107,6 +118,7 @@
             // 
             // deleteGroupBtn
             // 
+            this.deleteGroupBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.deleteGroupBtn.Location = new System.Drawing.Point(435, 65);
             this.deleteGroupBtn.Name = "deleteGroupBtn";
             this.deleteGroupBtn.Size = new System.Drawing.Size(155, 38);
@@ -117,6 +129,7 @@
             // 
             // removeStudentBtn
             // 
+            this.removeStudentBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.removeStudentBtn.Location = new System.Drawing.Point(435, 386);
             this.removeStudentBtn.Name = "removeStudentBtn";
             this.removeStudentBtn.Size = new System.Drawing.Size(159, 38);

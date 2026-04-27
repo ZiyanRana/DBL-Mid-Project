@@ -43,6 +43,7 @@
             // 
             // cmbAdvisors
             // 
+            this.cmbAdvisors.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cmbAdvisors.FormattingEnabled = true;
             this.cmbAdvisors.Location = new System.Drawing.Point(312, 85);
             this.cmbAdvisors.Name = "cmbAdvisors";
@@ -52,6 +53,7 @@
             // 
             // cmbRoles
             // 
+            this.cmbRoles.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbRoles.FormattingEnabled = true;
             this.cmbRoles.Location = new System.Drawing.Point(489, 85);
             this.cmbRoles.Name = "cmbRoles";
@@ -70,6 +72,10 @@
             // 
             // displayAssignments
             // 
+            this.displayAssignments.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayAssignments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.displayAssignments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayAssignments.Location = new System.Drawing.Point(130, 244);
             this.displayAssignments.Name = "displayAssignments";
@@ -83,6 +89,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(308, 59);
             this.label1.Name = "label1";
@@ -92,6 +99,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(489, 59);
             this.label2.Name = "label2";
@@ -118,6 +126,7 @@
             // 
             // removeAdvisorBtn
             // 
+            this.removeAdvisorBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.removeAdvisorBtn.Location = new System.Drawing.Point(295, 176);
             this.removeAdvisorBtn.Name = "removeAdvisorBtn";
             this.removeAdvisorBtn.Size = new System.Drawing.Size(148, 39);
@@ -128,6 +137,7 @@
             // 
             // refreshBtn
             // 
+            this.refreshBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.refreshBtn.Location = new System.Drawing.Point(468, 176);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(148, 39);

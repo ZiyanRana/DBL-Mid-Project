@@ -37,6 +37,7 @@
             // 
             // projectReportBtn
             // 
+            this.projectReportBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.projectReportBtn.Location = new System.Drawing.Point(163, 99);
             this.projectReportBtn.Name = "projectReportBtn";
             this.projectReportBtn.Size = new System.Drawing.Size(193, 47);
@@ -47,6 +48,7 @@
             // 
             // marksheetReportBtn
             // 
+            this.marksheetReportBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.marksheetReportBtn.Location = new System.Drawing.Point(443, 99);
             this.marksheetReportBtn.Name = "marksheetReportBtn";
             this.marksheetReportBtn.Size = new System.Drawing.Size(193, 47);
@@ -57,6 +59,10 @@
             // 
             // displayReports
             // 
+            this.displayReports.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayReports.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.displayReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.displayReports.Location = new System.Drawing.Point(163, 184);
             this.displayReports.Name = "displayReports";
@@ -68,6 +74,7 @@
             // 
             // exportPdfBtn
             // 
+            this.exportPdfBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.exportPdfBtn.Location = new System.Drawing.Point(308, 365);
             this.exportPdfBtn.Name = "exportPdfBtn";
             this.exportPdfBtn.Size = new System.Drawing.Size(193, 43);
