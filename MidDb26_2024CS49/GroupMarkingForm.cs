@@ -57,6 +57,8 @@ namespace MidDb26_2024CS49
         void ClearFields()
         {
             txtMarks.Text = "";
+            cmbEvals.SelectedValue = -1;
+            cmbGroups.SelectedValue = -1;
         }
 
         private void GroupMarkingForm_Load(object sender, EventArgs e)
@@ -74,9 +76,7 @@ namespace MidDb26_2024CS49
                 int evaluationId = Convert.ToInt32(cmbEvals.SelectedValue);
                 int obtainedMarks = Convert.ToInt32(txtMarks.Text);
 
-                string totalMarksQuery = @"
-                                          SELECT TotalMarks FROM evaluation
-                                          WHERE Id = {evaluationId};";
+                string totalMarksQuery = $"SELECT TotalMarks FROM evaluation WHERE Id = {evaluationId};";
 
                 int totalMarks = Convert.ToInt32(db.GetData(totalMarksQuery).Rows[0]["TotalMarks"]);
 
@@ -85,8 +85,13 @@ namespace MidDb26_2024CS49
                     MessageBox.Show("Obtained marks cannot exceed total marks!");
                     return;
                 }
+                if (obtainedMarks < 0)
+                {
+                    MessageBox.Show("Invalid marks entered!");
+                    return;
+                }
 
-                string query = $@"
+                    string query = $@"
                                 INSERT INTO groupevaluation (GroupId, EvaluationId, ObtainedMarks, EvaluationDate)
                                 VALUES ( {groupId}, {evaluationId}, {obtainedMarks}, NOW() );";
 
@@ -104,6 +109,11 @@ namespace MidDb26_2024CS49
         {
             try
             {
+                if (displayMarks.CurrentRow == null)
+                {
+                    MessageBox.Show("Select a marking first!");
+                    return;
+                }
                 int groupId = Convert.ToInt32(cmbGroups.SelectedValue);
                 int evaluationId = Convert.ToInt32(cmbEvals.SelectedValue);
                 int obtainedMarks = Convert.ToInt32(txtMarks.Text);
@@ -127,13 +137,16 @@ namespace MidDb26_2024CS49
         {
             try
             {
+                if (displayMarks.CurrentRow != null)
+                {
+                    if (MessageBox.Show("Are you sure you want to delete?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                }
+                    
                 int groupId = Convert.ToInt32(cmbGroups.SelectedValue);
-
                 int evaluationId = Convert.ToInt32(cmbEvals.SelectedValue);
 
-                string query = $@"
-                                DELETE FROM groupevaluation
-                                WHERE GroupId = {groupId} AND EvaluationId = {evaluationId}";
+                string query = $"DELETE FROM groupevaluation WHERE GroupId = {groupId} AND EvaluationId = {evaluationId}";
 
                 db.ExecuteQuery(query);
                 MessageBox.Show("Marks Deleted!");
