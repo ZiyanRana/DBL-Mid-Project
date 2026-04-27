@@ -25,19 +25,18 @@ namespace MidDb26_2024CS49
         {
             try
             {
-                string query = @"
-                                SELECT
-                                    p.Title AS Project, 
+                string query = @"SELECT
+                                    p.Title AS ProjectName, 
                                     gp.GroupId, 
                                     CONCAT(pe.FirstName, ' ', pe.LastName) AS Advisor,
                                     l.Value AS AdvisorRole
-                                FROM groupproject gp
-                                JOIN project p ON gp.ProjectId = p.Id
-                                JOIN projectadvisor pa ON p.Id = pa.ProjectId
-                                JOIN advisor a ON pa.AdvisorId = a.Id
-                                JOIN person pe ON a.Id = pe.Id
-                                JOIN lookup l ON pa.AdvisorRole = l.Id
-                                ORDER BY p.Title;";
+                                 FROM groupproject gp
+                                 JOIN project p ON gp.ProjectId = p.Id
+                                 JOIN projectadvisor pa ON p.Id = pa.ProjectId
+                                 JOIN advisor a ON pa.AdvisorId = a.Id
+                                 JOIN person pe ON a.Id = pe.Id
+                                 JOIN lookup l ON pa.AdvisorRole = l.Id
+                                 ORDER BY p.Title;";
 
                 displayReports.DataSource = db.GetData(query);
             }
@@ -51,14 +50,9 @@ namespace MidDb26_2024CS49
         {
             try
             {
-                string query = @"
-                                SELECT
-                                    ge.GroupId,
-                                    e.Name AS Evaluation,
-                                    ge.ObtainedMarks,
-                                    e.TotalMarks,
-                                    (
-                                        ge.ObtainedMarks * 100/e.TotalMarks) AS Percentage
+                string query = @"SELECT
+                                    ge.GroupId, e.Name AS Evaluation, ge.ObtainedMarks, e.TotalMarks,
+                                    ( ge.ObtainedMarks * 100/e.TotalMarks) AS Percentage
                                     FROM groupevaluation ge
                                     JOIN evaluation e ON ge.EvaluationId = e.Id;";
 
