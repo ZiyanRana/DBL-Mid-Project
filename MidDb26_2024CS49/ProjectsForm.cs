@@ -1,4 +1,5 @@
-﻿using System;
+﻿using iTextSharp.text.pdf.codec;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,13 @@ namespace MidDb26_2024CS49
 
             try
             {
+                string checkQuery = $"SELECT * FROM project WHERE Title = '{txtTitle.Text}';";
+                if (db.GetData(checkQuery).Rows.Count > 0)
+                {
+                    MessageBox.Show("Project with this title already exist!");
+                    return;
+                }
+
                 string query = $"INSERT INTO project (Title, Description) VALUES ('{txtTitle.Text}', '{txtDescription.Text}')";
                 db.ExecuteQuery(query);
 
@@ -87,16 +95,17 @@ namespace MidDb26_2024CS49
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Delete this project?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
             try
             {
+                if (displayProjects.CurrentRow != null)
+                {
+                    if (MessageBox.Show("Delete this project?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                }
                 int id = Convert.ToInt32(displayProjects.CurrentRow.Cells["Id"].Value);
 
                 db.ExecuteQuery($"DELETE FROM project WHERE Id = {id}");
-
-                MessageBox.Show("Deleted!");
+                MessageBox.Show("Project Deleted!");
 
                 LoadProjects();
                 ClearFields();
