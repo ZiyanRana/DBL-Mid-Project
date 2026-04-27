@@ -40,26 +40,24 @@ namespace MidDb26_2024CS49
                 MessageBox.Show("Evaluation name is required!");
                 return false;
             }
-            else if (txtMarks.Text == "")
+            if (txtMarks.Text == "")
             {
                 MessageBox.Show("Total Marks are required!");
                 return false; ;
             }
-            else if (txtWeightage.Text == "")
+            if (txtWeightage.Text == "")
             {
                 MessageBox.Show("Weightage is required!");
                 return false; ;
             }
-
-            if (!int.TryParse(txtMarks.Text, out _))
+            if (!int.TryParse(txtMarks.Text, out _) || int.Parse(txtMarks.Text) < 0 || int.Parse(txtMarks.Text) > 100)
             {
-                MessageBox.Show("Enter valid total marks");
+                MessageBox.Show("Invalid total marks entered!");
                 return false;
             }
-
-            if (!int.TryParse(txtWeightage.Text, out _))
+            if (!int.TryParse(txtWeightage.Text, out _) || int.Parse(txtWeightage.Text) < 0 || int.Parse(txtWeightage.Text) > 100)
             {
-                MessageBox.Show("Enter valid weightage");
+                MessageBox.Show("Invalid weightage entered!");
                 return false; ;
             }
             return true;
@@ -93,9 +91,15 @@ namespace MidDb26_2024CS49
             {
                 if (!ValidateInputs()) return;
 
-                string query = $@"
-                                INSERT INTO evaluation (Name, TotalMarks, TotalWeightage)
-                                VALUES ('{txtName.Text}', {txtMarks.Text}, {txtWeightage.Text})";
+                string checkQuery = $"SELECT * FROM evaluation WHERE Name = '{txtName.Text}';";
+                if (db.GetData(checkQuery).Rows.Count > 0)
+                {
+                    MessageBox.Show("An evaluation with this name already exist!");
+                    return;
+                }
+
+                string query = $@" INSERT INTO evaluation (Name, TotalMarks, TotalWeightage)
+                                   VALUES ('{txtName.Text}', {txtMarks.Text}, {txtWeightage.Text})";
                 db.ExecuteQuery(query);
                 MessageBox.Show("Evaluation Added");
 
@@ -114,6 +118,13 @@ namespace MidDb26_2024CS49
             try
             {
                 if (!ValidateInputs()) return;
+
+                string checkQuery = $"SELECT * FROM evaluation WHERE Name = '{txtName.Text}';";
+                if (db.GetData(checkQuery).Rows.Count > 0)
+                {
+                    MessageBox.Show("An evaluation with this name already exist!");
+                    return;
+                }
 
                 int id = Convert.ToInt32(displayEvaluations.CurrentRow.Cells["Id"].Value);
                 string query = $@"
@@ -138,6 +149,11 @@ namespace MidDb26_2024CS49
         {
             try
             {
+                if (displayEvaluations.CurrentRow != null)
+                {
+                    if (MessageBox.Show("Are you sure you want to delete this evaluation?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                }
                 int id = Convert.ToInt32(displayEvaluations.CurrentRow.Cells["Id"].Value);
                 string query = $"DELETE FROM evaluation WHERE Id = {id};";
 
