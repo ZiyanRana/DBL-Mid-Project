@@ -61,8 +61,9 @@ namespace MidDb26_2024CS49
 
             try
             {
-                string checkQuery = $"SELECT * FROM student WHERE RegistrationNo = '{txtRegno.Text}';";
-                if (db.GetData(checkQuery).Rows.Count > 0)
+                string checkQuery1 = $"SELECT * FROM student WHERE RegistrationNo = '{txtRegno.Text}';";
+                string checkQuery2 = $"SELECT * FROM  student s JOIN person p ON s.Id = p.Id WHERE p.Email = '{txtEmail.Text}';";
+                if (db.GetData(checkQuery1).Rows.Count > 0 || db.GetData(checkQuery2).Rows.Count > 0)
                 {
                     MessageBox.Show("Student with this registration number or email already exists!");
                     return;
@@ -91,17 +92,19 @@ namespace MidDb26_2024CS49
 
         private void deleteStudentBtn_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Are you sure you want to delete?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
-                return;
-
             try
             {
+                if (displayStudents.CurrentRow != null)
+                {
+                    if (MessageBox.Show("Are you sure you want to delete?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return;
+                }
                 int id = Convert.ToInt32(displayStudents.CurrentRow.Cells["Id"].Value);
 
                 db.ExecuteQuery($"DELETE FROM student WHERE Id = {id}");
                 db.ExecuteQuery($"DELETE FROM person WHERE Id = {id}");
 
-                MessageBox.Show("Deleted!");
+                MessageBox.Show("Student deleted successfully!");
 
                 ClearFields();
                 LoadStudents();
@@ -157,6 +160,13 @@ namespace MidDb26_2024CS49
 
             try
             {
+                string checkQuery1 = $"SELECT * FROM student WHERE RegistrationNo = '{txtRegno.Text}';";
+                string checkQuery2 = $"SELECT * FROM  student s JOIN person p ON s.Id = p.Id WHERE p.Email = '{txtEmail.Text}';";
+                if (db.GetData(checkQuery1).Rows.Count > 0 || db.GetData(checkQuery2).Rows.Count > 0)
+                {
+                    MessageBox.Show("Student with this registration number or email already exists!");
+                    return;
+                }
                 int id = Convert.ToInt32(displayStudents.CurrentRow.Cells["Id"].Value);
                 int gender = Convert.ToInt32(cmbGender.SelectedValue);
 
