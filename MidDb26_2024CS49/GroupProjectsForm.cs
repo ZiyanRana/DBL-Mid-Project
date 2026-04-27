@@ -65,14 +65,12 @@ namespace MidDb26_2024CS49
                 int groupId = Convert.ToInt32(cmbGroups.SelectedValue);
                 int projectId = Convert.ToInt32(cmbProjects.SelectedValue);
 
-                string checkQuery = $@"
-                                    SELECT *
-                                    FROM groupproject
-                                    WHERE GroupId = {groupId}";
+                string checkQuery = $@" SELECT * FROM groupproject
+                                        WHERE GroupId = {groupId} AND ProjectId = {projectId};";
 
                 if (db.GetData(checkQuery).Rows.Count > 0)
                 {
-                    MessageBox.Show("This group already has a project assigned!");
+                    MessageBox.Show("This group already has the project assigned!");
                     return;
                 }
 
