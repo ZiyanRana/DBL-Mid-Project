@@ -37,7 +37,7 @@
             // 
             // projectReportBtn
             // 
-            this.projectReportBtn.Location = new System.Drawing.Point(163, 86);
+            this.projectReportBtn.Location = new System.Drawing.Point(163, 99);
             this.projectReportBtn.Name = "projectReportBtn";
             this.projectReportBtn.Size = new System.Drawing.Size(193, 47);
             this.projectReportBtn.TabIndex = 0;
@@ -47,7 +47,7 @@
             // 
             // marksheetReportBtn
             // 
-            this.marksheetReportBtn.Location = new System.Drawing.Point(443, 86);
+            this.marksheetReportBtn.Location = new System.Drawing.Point(443, 99);
             this.marksheetReportBtn.Name = "marksheetReportBtn";
             this.marksheetReportBtn.Size = new System.Drawing.Size(193, 47);
             this.marksheetReportBtn.TabIndex = 1;
@@ -58,7 +58,7 @@
             // displayReports
             // 
             this.displayReports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.displayReports.Location = new System.Drawing.Point(163, 183);
+            this.displayReports.Location = new System.Drawing.Point(163, 184);
             this.displayReports.Name = "displayReports";
             this.displayReports.RowHeadersWidth = 62;
             this.displayReports.RowTemplate.Height = 28;
@@ -68,9 +68,9 @@
             // 
             // exportPdfBtn
             // 
-            this.exportPdfBtn.Location = new System.Drawing.Point(306, 374);
+            this.exportPdfBtn.Location = new System.Drawing.Point(308, 365);
             this.exportPdfBtn.Name = "exportPdfBtn";
-            this.exportPdfBtn.Size = new System.Drawing.Size(177, 43);
+            this.exportPdfBtn.Size = new System.Drawing.Size(193, 43);
             this.exportPdfBtn.TabIndex = 3;
             this.exportPdfBtn.Text = "Export to PDF";
             this.exportPdfBtn.UseVisualStyleBackColor = true;
@@ -80,7 +80,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 459);
             this.Controls.Add(this.exportPdfBtn);
             this.Controls.Add(this.displayReports);
             this.Controls.Add(this.marksheetReportBtn);
